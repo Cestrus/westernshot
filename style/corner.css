@@ -1,0 +1,15 @@
+.corner{
+	background-size: contain;
+	background-image: url("../img/patterns/vintage_corner2.svg");
+	background-repeat: no-repeat;
+}
+.corner--r-t {
+	transform: rotate(180deg);
+	transform: scaleX(-1);
+}
+.corner--l-b{
+	transform: scaleY(-1);
+}
+.corner--r-b{
+	transform: rotate(180deg);
+}

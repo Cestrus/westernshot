@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XqG3fZVIIB1RPJDNtlUbLqkiNm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myProject\Western\media" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="" />
+      <created>1581766013568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581766013568</updated>
+      <workItem from="1581766017102" duration="5738000" />
+      <workItem from="1581778982108" duration="3769000" />
+      <workItem from="1581841913725" duration="1196000" />
+      <workItem from="1581863775848" duration="16536000" />
+      <workItem from="1581935713912" duration="1235000" />
+      <workItem from="1581949093075" duration="4452000" />
+      <workItem from="1582017144702" duration="2092000" />
+      <workItem from="1582990023239" duration="8823000" />
+      <workItem from="1583002875844" duration="11402000" />
+      <workItem from="1583052842539" duration="8841000" />
+      <workItem from="1583070601260" duration="2793000" />
+      <workItem from="1583088244222" duration="4678000" />
+      <workItem from="1583245496799" duration="6572000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581866570187">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581866570187" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1581766660037">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581766660037" />
+  </component>
+</project>

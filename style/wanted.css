@@ -1,0 +1,39 @@
+.wanted{
+	display: flex;
+	justify-content: center;
+	margin: 5px;
+	height: calc(100% - 10px);
+	width: calc(100% - 10px);
+	background-image: url("../img/crap/06_2.jpg");
+	background-size: 100% 100%;
+	/*background-position: top center;*/
+	background-repeat: no-repeat;
+	border: 2px solid black;
+	box-sizing: border-box;
+
+}
+.paper{
+	width: 70%;
+	height: 80%;
+	margin: auto;
+	background-image: url("../img/bandit/paper.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.paper img {
+	width: 70%;
+	display: block;
+	margin: 10px auto;
+}
+.paper p {
+	font-family: 'Western Dead';
+	font-size: 1.5em;
+	color: black;
+	text-align: center;
+	margin-top: -5px;
+}
+/*.wanted{*/
+/*	transition: all 0.1s linear;*/
+/*	transform: scaleX(0.8);*/
+/*}*/

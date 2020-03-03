@@ -1,0 +1,22 @@
+.bullets{
+	display: flex;
+	height: 30%;
+	width: 100%;
+	background-color: cadetblue;
+}
+.gun{
+	height: 40%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 60%;
+	background-image: url("../img/bullet/gun_6.svg");
+}
+.hole{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background-position: center;
+	background-size: cover;
+	background-image: url("../img/holes/bullet-hole-1.png");
+}

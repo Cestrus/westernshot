@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controllerWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modelWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/gun.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/gun.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/wanted.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/wanted.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
       <workItem from="1583052842539" duration="8841000" />
       <workItem from="1583070601260" duration="2793000" />
       <workItem from="1583088244222" duration="4678000" />
-      <workItem from="1583245496799" duration="14096000" />
+      <workItem from="1583245496799" duration="21842000" />
     </task>
     <servers />
   </component>

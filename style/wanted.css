@@ -6,7 +6,6 @@
 	width: calc(100% - 10px);
 	background-image: url("../img/crap/06_2.jpg");
 	background-size: 100% 100%;
-	/*background-position: top center;*/
 	background-repeat: no-repeat;
 	border: 2px solid black;
 	box-sizing: border-box;
@@ -28,10 +27,9 @@
 }
 .paper p {
 	font-family: 'Western Dead';
-	font-size: 1.5em;
+	font-size: 1.2em;
 	color: black;
 	text-align: center;
-	margin-top: -5px;
 }
 /*.wanted{*/
 /*	transition: all 0.1s linear;*/

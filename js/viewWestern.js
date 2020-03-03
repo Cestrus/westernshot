@@ -1,6 +1,7 @@
 export class viewWestern {
-	constructor(bank, bulletsQuantity, randomHole) {
+	constructor(bank, bulletsQuantity, randomHole, randomBandit) {
 		this.gamePlate = document.querySelector('.game-plate');
+		this.wantedList = () =>{this.renderGamePlate(); return document.querySelectorAll('.wanted')};
 		this.money = document.querySelector('.money');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
@@ -10,14 +11,29 @@ export class viewWestern {
 		});
 
 		this.bank = bank;
+		this.bulletsQuantity = bulletsQuantity;
+		this.randomHole = randomHole;
+		this.randomBandit = randomBandit;
+
 		this.isClick = false;
 		this.idInterval = true;
 		this.bulletsRevolver = 6;
-		this.bulletsQuantity = bulletsQuantity;
 		this.isReloadGun = false;
-		this.randomHole = randomHole;
+
 		this.renderBank();
 		this.renderBullets();
+	}
+
+	renderGamePlate(){
+		let str='';
+		for(let i=0; i<3; i++){
+			str += '<div class="row bandit-row">';
+			for(let j=0; j<6; j++){
+				str += '<div class="col-md-2 px-0"><div class="wanted"></div></div>';
+			}
+			str+='</div>';
+		}
+		this.gamePlate.innerHTML = str;
 	}
 	renderBank(){
 		this.money.innerText = `BANK: ${this.bank}$`;
@@ -27,6 +43,7 @@ export class viewWestern {
 			this.bullets.innerHTML += '<div class="bullet"></div>';
 		}
 	}
+
 	goMoney(coins) { //TODO начисление денег
 		if(!this.isClick){
 			this.isClick = true;

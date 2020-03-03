@@ -3,6 +3,7 @@ export class viewWestern {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.money = document.querySelector('.money');
 		this.gun = document.querySelector('.gun');
+		this.bullets = document.querySelector('.bullets');
 		this.gamePlate.addEventListener('click', ev=>{
 			this.goMoney(50);
 			this.shot(ev);
@@ -11,13 +12,20 @@ export class viewWestern {
 		this.bank = bank;
 		this.isClick = false;
 		this.idInterval = true;
-		this.bullet = 6;
+		this.bulletsRevolver = 6;
+		this.bulletsQuantity = bulletsQuantity;
 		this.isReloadGun = false;
 		this.randomHole = randomHole;
 		this.renderBank();
+		this.renderBullets();
 	}
 	renderBank(){
 		this.money.innerText = `BANK: ${this.bank}$`;
+	}
+	renderBullets(){
+		for (let i =0; i<this.bulletsQuantity; i++){
+			this.bullets.innerHTML += '<div class="bullet"></div>';
+		}
 	}
 	goMoney(coins) { //TODO начисление денег
 		if(!this.isClick){
@@ -34,13 +42,17 @@ export class viewWestern {
 	}
 	shot(ev){
 		if(!this.isReloadGun){
-			this.bullet--;
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bullet}.svg")`;
+			this.bulletsRevolver--;
+			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
+			this.bullets.children[this.bullets.children.length-1].remove();
 			new Audio('./media/sounds/shot.wav').play();
 			this.renderHoleShot(ev);
-			if(!this.bullet){
+			if(!this.bullets.children.length){
+				this.endGame();
+			}
+			else if(!this.bulletsRevolver){
 				this.isReloadGun = true;
-				this.bullet = 6;
+				this.bulletsRevolver = 6;
 				this.reload();
 			}
 		}
@@ -48,7 +60,7 @@ export class viewWestern {
 	reload(){
 		let a = 1;
 		let interval = setInterval(()=>{
-			if(a==6) {
+			if(a===6) {
 				this.isReloadGun = false;
 				clearInterval(interval);
 			}
@@ -68,5 +80,8 @@ export class viewWestern {
 			hole.remove();
 			clearInterval(interval);
 		}, 2000);
+	}
+	endGame(){
+		console.log('game over');
 	}
 }

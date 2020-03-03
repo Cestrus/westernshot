@@ -1,8 +1,17 @@
 .bullets{
-	display: flex;
 	height: 30%;
 	width: 100%;
-	background-color: cadetblue;
+}
+.bullet{
+	display: inline-block;
+	width: 10px;
+	height: 30px;
+	float: left;
+	margin: 1px;
+	background-image: url("../img/bullet/bullet.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 .gun{
 	height: 40%;
@@ -18,5 +27,4 @@
 	height: 30px;
 	background-position: center;
 	background-size: cover;
-	background-image: url("../img/holes/bullet-hole-1.png");
 }

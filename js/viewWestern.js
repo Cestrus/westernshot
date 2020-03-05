@@ -1,7 +1,7 @@
 export class viewWestern {
 	constructor(bank, bulletsQuantity, randomHole, randomBandit) {
 		this.gamePlate = document.querySelector('.game-plate');
-		this.wantedList = () =>{this.renderGamePlate(); return document.querySelectorAll('.wanted')};
+		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.money = document.querySelector('.money');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
@@ -22,6 +22,7 @@ export class viewWestern {
 
 		this.renderBank();
 		this.renderBullets();
+		// this.renderGamePlate()
 	}
 
 	renderGamePlate(){

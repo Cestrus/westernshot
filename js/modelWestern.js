@@ -10,10 +10,13 @@ export class modelWestern{
 			'url("./img/holes/bullet-hole-2.png")',
 			'url("./img/holes/bullet-hole-3.png")',
 			'url("./img/holes/bullet-hole-4.png")',
-		]
+		];
 		this.arrBandits = [
-			'<img src="./img/bandit/pig.png" alt="bandit">',
-			'<img src="./img/bandit/shooter_3.png" alt="bandit"><p>cost: 50$</p>',
+			{isBandit: true, img: './img/bandit/shooter_1.png', cost:'60$',  },
+			{isBandit: true, img: './img/bandit/shooter_2.png', cost:'70$',  },
+			{isBandit: true, img: './img/bandit/shooter_3.png', cost:'50$',  },
+			{isBandit: false, img: './img/bandit/pig_3.png', cost:'',  },
+			{isBandit: false, img: './img/bandit/funt.png', cost:'',  }
 		]
 
 	}

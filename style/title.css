@@ -5,13 +5,15 @@
 	color: black;
 }
 .top-gun-left{
-	background-image: url("../img/other/shotgun.svg");
-	background-position: top;
+	background-image: url("../img/other/btn-gun.svg");
+	background-position: center;
+	background-size: contain;
 	background-repeat: no-repeat;
 }
 .top-gun-right{
-	background-image: url("../img/other/shotgun.svg");
+	background-image: url("../img/other/btn-gun.svg");
 	transform: scaleX(-1);
-	background-position: top;
+	background-position: center;
+	background-size: contain;
 	background-repeat: no-repeat;
 }

@@ -27,7 +27,7 @@ export class audioPlayer {
 	// 	});
 	// }
 	clickAudio(){
-		if(this.btnAudio.classList.contains('btnAudio-pause')){
+		if(this.btnAudio.classList.contains('btnAudio-play')){
 			this.audioTtrack.loop = true;
 			this.audioTtrack.play();
 		}

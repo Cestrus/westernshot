@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/audioPlayer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/audioPlayer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/recordTable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/startModal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/37012666.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/pig.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/pig_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/shooter_1.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/shooter_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/bandit/shooter_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/shooter_2.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/shooter_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/bandit/shooter_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/bandit/shooter_3.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/civil/unnamed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/cursor/crosshair.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controllerWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modelWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/sounds/other/jg-032316-sfx-shotgun-cocking-slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/sounds/other/reload_bullet.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/sounds/other/shotgun-12-gauge-cock_gjvpnoeu.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/sounds/other/z_uk-vystrel-s-pistoleta.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/audioPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Neil Young - Dead Man Theme.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Neil Young - Dead Man Theme.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -88,6 +72,8 @@
       <workItem from="1583088244222" duration="4678000" />
       <workItem from="1583245496799" duration="22075000" />
       <workItem from="1583322077507" duration="18373000" />
+      <workItem from="1583390637325" duration="2815000" />
+      <workItem from="1583408087149" duration="9910000" />
     </task>
     <servers />
   </component>

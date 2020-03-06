@@ -13,12 +13,15 @@ export class controllerWestern{
 									this.randomHole.bind(this),
 									this.randomBandit(this));
 		this.audio = new audioPlayer();		
-		this.startModal = new startModal(this.view.p);
+		this.startModal = new startModal(this.view.p, this.startAudio.bind(this));
 	}
 	randomHole(){
 		return this.model.randomHole();
 	}
 	randomBandit(){
 		return this.model.randomBandit();
+	}
+	startAudio(){
+		return this.audio.startAudio();
 	}
 }

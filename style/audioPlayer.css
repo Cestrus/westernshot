@@ -10,8 +10,32 @@
 }
 .audioVolume{
 	width: 80%;
-
 }
+.inpAudioVolume{
+	-webkit-appearance: none;
+	cursor: pointer;
+	appearance: none;
+	width: calc(100% - 10px);
+	height: 2px;
+	background: black;
+	outline: none;
+}
+.inpAudioVolume::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: black;
+}
+.inpAudioVolume::-moz-range-thumb{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: black;
+}
+
+
 .btnAudio{
 	height: 30px;
 	width: 30px;

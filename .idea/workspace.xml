@@ -4,11 +4,9 @@
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/audioPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/audioPlayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/audioPlayer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/recordTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/recordTable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/startModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/startModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/startModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/title.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -73,7 +71,8 @@
       <workItem from="1583245496799" duration="22075000" />
       <workItem from="1583322077507" duration="18373000" />
       <workItem from="1583390637325" duration="2815000" />
-      <workItem from="1583408087149" duration="17182000" />
+      <workItem from="1583408087149" duration="23409000" />
+      <workItem from="1583497685354" duration="624000" />
     </task>
     <servers />
   </component>
@@ -85,10 +84,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="633" y="283" key="#Menus_and_Toolbars/0.0.1920.1040@0.0.1920.1040" timestamp="1583358424929" />
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581866570187">
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583442197189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581866570187" />
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583442197189" />
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1583358419990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,38 +2,42 @@ export class audioPlayer {
 	constructor(){
 		this.audioPlayer = document.querySelector('.audioPlayer');
 		this.renderAudioPlayer();
+		this.volume = document.querySelector('.inpAudioVolume');
 		this.btnAudio = document.querySelector('.btnAudio');
 		this.audioVolume = document.querySelector('.audioVolume');
-		this.audioTtrack = new Audio('./media/Neil Young.mp3');
-
+		this.audioTrack = new Audio('./media/Neil Young.mp3');
+		console.dir(this.audioTrack);
 
 		this.btnAudio.addEventListener('click', this.clickAudio.bind(this));
+		this.volume.addEventListener('change', this.changeVolume.bind(this));
 
 	}
 	renderAudioPlayer(){
 		this.audioPlayer.innerHTML = `<p>audio control</p>
 									  <div class="audioControl d-flex">
-										  <div class="audioVolume"></div>
-										  <div class="btnAudio btnAudio-play"></div>
+										  <div class="audioVolume">
+											<input type="range" class="inpAudioVolume" min="0" max="100" step="5"> 
+										  </div>
+										  <div class="btnAudio btnAudio-pause"></div>
 									  </div>`
 	}
-	// loadAudio(){
-	// 	document.addEventListener('DOMContentLoaded', ()=> {
-	// 		console.log('DOM loaded');
-	// 		this.audio.autoplay = true;
-	// 		this.audio.loop = true;
-	// 		this.audioPlayer.appendChild(this.audio);
-	//
-	// 	});
-	// }
+	startAudio(){
+			this.audioTrack.autoplay = true;
+			this.audioTrack.loop = true;
+			console.log(this.volume.value);
+			this.audioTrack.volume = this.volume.value / 100;
+			this.audioTrack.play();
+	}
 	clickAudio(){
 		if(this.btnAudio.classList.contains('btnAudio-play')){
-			this.audioTtrack.loop = true;
-			this.audioTtrack.play();
+			this.audioTrack.play();
 		}
-		else this.audioTtrack.pause();
+		else this.audioTrack.pause();
 		this.btnAudio.classList.toggle('btnAudio-pause');
 		this.btnAudio.classList.toggle('btnAudio-play');
+	}
+	changeVolume(){
+		this.audioTrack.volume = this.volume.value / 100;
 	}
 
 }

@@ -45,6 +45,6 @@
 	text-align: center;
 	height: 30%;
 }
-.game-plate:hover{
+.game-place:hover{
 	cursor: url('../img/control/crosshair.png') 50 50, crosshair;
 }

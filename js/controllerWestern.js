@@ -1,17 +1,19 @@
 import {modelWestern} from './modelWestern.js';
 import {viewWestern} from './viewWestern.js';
 import {audioPlayer} from './audioPlayer.js';
+import {startModal} from "./startModal.js";
 
 
 
 export class controllerWestern{
-	constructor() {
+	constructor() {		
 		this.model = new modelWestern();
 		this.view = new viewWestern(this.model.bank,
 									this.model.bulletsQuantity,
 									this.randomHole.bind(this),
 									this.randomBandit(this));
-		this.audio = new audioPlayer();
+		this.audio = new audioPlayer();		
+		this.startModal = new startModal(this.view.p);
 	}
 	randomHole(){
 		return this.model.randomHole();

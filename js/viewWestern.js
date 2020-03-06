@@ -5,6 +5,8 @@ export class viewWestern {
 		this.money = document.querySelector('.money');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
+		this.p = document.querySelector('.gamerName p');
+
 		this.gamePlate.addEventListener('click', ev=>{
 			this.goMoney(50);
 			this.shot(ev);
@@ -22,7 +24,6 @@ export class viewWestern {
 
 		this.renderBank();
 		this.renderBullets();
-		// this.renderGamePlate()
 	}
 
 	renderGamePlate(){

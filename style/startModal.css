@@ -1,20 +1,20 @@
 .myModal{
 	position: absolute;
-	width: 500px;
+	width: 450px;
 	height: 250px;
 	border: 2px solid black;
 	margin: auto;
 	background-image: url("../img/background/wild-west.jpg");
 	background-size: 100% 100%;
 	font-family: 'Western Dead';
-	font-size: 30px;
+	font-size: 25px;
 	text-align: center;
 
 	opacity: 0;
 	visibility: hidden;
 	z-index: 30;
 	top: calc(50vh - 125px);
-	left: calc(50vw - 250px);
+	left: calc(50vw - 225px);
 }
 p{
 	margin-top: 40px;
@@ -30,16 +30,12 @@ p{
 	transform: rotate(180deg);
 	transform: scaleX(-1);
 }
-.corner-modal--l-b{
-	transform: scaleY(-1);
-}
-.corner-modal--r-b{
-	transform: rotate(180deg);
-}
+.corner-modal--l-b{transform: scaleY(-1);}
+.corner-modal--r-b{transform: rotate(180deg);}
 .inputModal{
 	display: inline-block;
 	height: 40px;
-	width: 250px;
+	width: 200px;
 	background-color: rgb(142, 72, 28);
 	font-family: 'Western Dead';
 	font-size: 25px;
@@ -47,20 +43,21 @@ p{
 	border: 1px solid black;
 	padding-left: 10px;
 }
-.btn-modal{
+.btnModal{
 	height: 40px;
 	width: 70px;
 	padding: 0;
-	margin: 0;
+	margin-bottom: 5px;
 	background-color: rgb(142, 72, 28);
 	background-size: contain;
 	background-position: center;
 	background-image: url("../img/other/btn-gun.svg");
 	background-repeat: no-repeat;
 }
-.overlay{
-	opacity: 0.2;
-	visibility: hidden;
+.overlayModal{
+	opacity: 0.8;
+	visibility: visible;
+	background-color: black;
 
 	position: fixed;
 	left: 0;
@@ -69,6 +66,8 @@ p{
 	height: 100%;
 	z-index: 20;
 	transition: all 0.3s;
-
-
+}
+.activeModal{
+	opacity: 1;
+	visibility: visible;
 }

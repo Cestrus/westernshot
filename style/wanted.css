@@ -9,6 +9,7 @@
 	background-repeat: no-repeat;
 	border: 2px solid black;
 	box-sizing: border-box;
+	transition: all 0.5s linear;
 
 }
 .paper{
@@ -31,7 +32,6 @@
 	color: black;
 	text-align: center;
 }
-/*.wanted{*/
-/*	transition: all 0.1s linear;*/
-/*	transform: scaleX(0.8);*/
-/*}*/
+.wanted-move{
+	transform: scaleX(-1);
+}

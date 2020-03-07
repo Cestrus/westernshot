@@ -5,7 +5,7 @@ export class audioPlayer {
 		this.volume = document.querySelector('.inpAudioVolume');
 		this.btnAudio = document.querySelector('.btnAudio');
 		this.audioVolume = document.querySelector('.audioVolume');
-		this.audioTrack = new Audio('./media/Neil Young_.mp3');
+		this.audioTrack = new Audio('./media/Neil Young.mp3');
 
 		this.btnAudio.addEventListener('click', this.clickAudio.bind(this));
 		this.volume.addEventListener('change', this.changeVolume.bind(this));

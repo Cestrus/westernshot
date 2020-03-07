@@ -12,9 +12,10 @@ export class modelWestern{
 			{isBandit: true, img: './img/bandit/shooter_1.png', cost:'60$',  },
 			{isBandit: true, img: './img/bandit/shooter_2.png', cost:'70$',  },
 			{isBandit: true, img: './img/bandit/shooter_3.png', cost:'50$',  },
-			{isBandit: false, img: './img/bandit/pig_3.png', cost:'',  },
-			{isBandit: false, img: './img/bandit/funt.png', cost:'',  }
 		];
+
+		// {isBandit: false, img: './img/bandit/pig_3.png', cost:'',  },
+		// {isBandit: false, img: './img/bandit/funt.png', cost:'',  }
 		this.arrWoodPlanks = [
 			'(./img/background/wood-plank_1.png)',
 			'(./img/background/wood-plank_2.png)',

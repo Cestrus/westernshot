@@ -23,6 +23,7 @@ export class viewWestern {
 		this.idInterval = true;//
 		this.bulletsRevolver = 6;
 		this.isReloadGun = false;
+		this.isEnd = false;
 
 		this.renderBank();
 		this.renderBullets();
@@ -109,7 +110,45 @@ export class viewWestern {
 		let interval = setTimeout(()=>{
 			hole.remove();
 			clearInterval(interval);
-		}, 2000);
+		}, 500);
+	}
+	startGame(){
+		this.wantedList.forEach(el=>{
+			let time = Math.floor(Math.random()*4000+2000);
+			setInterval(()=>{
+				this.addBandit(el).
+					then(()=>{
+						this.renderBandit(el);
+						let interval = setTimeout(()=>{
+							this.removeBandit(el).
+								then(()=>{
+									el.innerHTML = '';
+									clearInterval(interval);
+								});
+						}, 1500); //задержка на экране
+					});
+			},time);
+		});
+	}
+	addBandit(el){
+		return new Promise(function (resolve) {
+			el.classList.add('wanted-move');
+			setTimeout(()=>resolve(), 250); // половина от css transition
+		});
+	}
+	removeBandit(el){
+		return new Promise(function (resolve) {
+			el.classList.remove('wanted-move');
+			setTimeout(()=>resolve(), 250);
+		});
+	}
+	renderBandit(el){
+		let bandit = this.randomBandit();
+		if(Math.random() <= 0.2){
+			el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
+							<img src="${bandit.img}" alt="bandit"><p>cost: ${bandit.cost}</p>
+						</div>`;
+		}
 	}
 	endGame(){
 		this.checkRecords();

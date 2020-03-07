@@ -3,8 +3,6 @@ import {viewWestern} from './viewWestern.js';
 import {audioPlayer} from './audioPlayer.js';
 import {startModal} from "./startModal.js";
 
-
-
 export class controllerWestern{
 	constructor() {		
 		this.model = new modelWestern();
@@ -14,7 +12,9 @@ export class controllerWestern{
 									this.randomBandit.bind(this),
 									this.randomWoodPlank.bind(this));
 		this.audio = new audioPlayer();		
-		this.startModal = new startModal(this.view.p, this.startAudio.bind(this));
+		this.startModal = new startModal(this.view.p,
+										 this.startAudio.bind(this),
+										 this.startGame.bind(this));
 	}
 	randomHole(){
 		return this.model.randomHole();
@@ -27,5 +27,8 @@ export class controllerWestern{
 	}
 	startAudio(){
 		return this.audio.startAudio();
+	}
+	startGame(){
+		return this.view.startGame();
 	}
 }

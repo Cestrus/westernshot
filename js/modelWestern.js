@@ -2,9 +2,6 @@ export class modelWestern{
 	constructor() {
 		this.bank = 100;
 		this.bulletsQuantity = 60;
-		this.coins = 20;
-		this.idInterval = true;
-		this.isClick = false;
 		this.arrHoleShot = [
 			'url("./img/holes/bullet-hole-1.png")',
 			'url("./img/holes/bullet-hole-2.png")',
@@ -17,6 +14,13 @@ export class modelWestern{
 			{isBandit: true, img: './img/bandit/shooter_3.png', cost:'50$',  },
 			{isBandit: false, img: './img/bandit/pig_3.png', cost:'',  },
 			{isBandit: false, img: './img/bandit/funt.png', cost:'',  }
+		];
+		this.arrWoodPlanks = [
+			'(./img/background/wood-plank_1.png)',
+			'(./img/background/wood-plank_2.png)',
+			'(./img/background/wood-plank_3.png)',
+			'(./img/background/wood-plank_4.png)',
+			'(./img/background/wood-plank_5.png)',
 		]
 
 	}
@@ -25,5 +29,8 @@ export class modelWestern{
 	}
 	randomBandit(){
 		return this.arrBandits[Math.floor(Math.random() * this.arrBandits.length)];
+	}
+	randomWoodPlank(){
+		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
 }

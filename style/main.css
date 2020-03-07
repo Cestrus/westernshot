@@ -46,5 +46,5 @@
 	height: 30%;
 }
 .game-place:hover{
-	cursor: url('../img/control/crosshair.png') 50 50, crosshair;
+	cursor: url('https://cestrus.github.io/westernshot/img/control/aim.cur') , crosshair;
 }

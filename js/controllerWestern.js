@@ -11,7 +11,8 @@ export class controllerWestern{
 		this.view = new viewWestern(this.model.bank,
 									this.model.bulletsQuantity,
 									this.randomHole.bind(this),
-									this.randomBandit(this));
+									this.randomBandit.bind(this),
+									this.randomWoodPlank.bind(this));
 		this.audio = new audioPlayer();		
 		this.startModal = new startModal(this.view.p, this.startAudio.bind(this));
 	}
@@ -20,6 +21,9 @@ export class controllerWestern{
 	}
 	randomBandit(){
 		return this.model.randomBandit();
+	}
+	randomWoodPlank(){
+		return this.model.randomWoodPlank();
 	}
 	startAudio(){
 		return this.audio.startAudio();

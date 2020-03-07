@@ -1,11 +1,12 @@
 export class viewWestern {
-	constructor(bank, bulletsQuantity, randomHole, randomBandit) {
+	constructor(bank, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.money = document.querySelector('.money');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
 		this.p = document.querySelector('.gamerName p');
+		this.recordTable = document.querySelector('.recordTable');
 
 		this.gamePlate.addEventListener('click', ev=>{
 			this.goMoney(50);
@@ -16,14 +17,16 @@ export class viewWestern {
 		this.bulletsQuantity = bulletsQuantity;
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
+		this.randomWoodPlank = randomWoodPlank;
 
-		this.isClick = false;
-		this.idInterval = true;
+		this.isClick = false;//
+		this.idInterval = true;//
 		this.bulletsRevolver = 6;
 		this.isReloadGun = false;
 
 		this.renderBank();
 		this.renderBullets();
+		this.renderRecordTable();
 	}
 
 	renderGamePlate(){
@@ -45,6 +48,14 @@ export class viewWestern {
 			this.bullets.innerHTML += '<div class="bullet"></div>';
 		}
 	}
+	renderRecordTable(record){
+		let str = '';
+		for(let i=0; i<5; i++){
+			str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i+1}.</span><span class="shooterName">artem</span><span> 1120$
+		</span></div>`;
+		}
+		this.recordTable.innerHTML = '<div class="recordResultTitle">The best shooters</div>' + str;
+	}
 
 	goMoney(coins) { //TODO начисление денег
 		if(!this.isClick){
@@ -62,7 +73,7 @@ export class viewWestern {
 	shot(ev){
 		if(!this.isReloadGun){
 			this.bulletsRevolver--;
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
+			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg");`;
 			this.bullets.children[this.bullets.children.length-1].remove();
 			new Audio('./media/sounds/shot.wav').play();
 			this.renderHoleShot(ev);
@@ -101,6 +112,7 @@ export class viewWestern {
 		}, 2000);
 	}
 	endGame(){
+		this.checkRecords();
 		console.log('game over');
 	}
 }

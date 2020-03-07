@@ -34,8 +34,6 @@
 	border-radius: 50%;
 	background-color: black;
 }
-
-
 .btnAudio{
 	height: 30px;
 	width: 30px;
@@ -46,6 +44,7 @@
 	background-repeat: no-repeat;
 
 }
+.btnAudio:hover{cursor: pointer}
 .btnAudio-play{
 	background-image: url(../img/control/play.svg);
 }

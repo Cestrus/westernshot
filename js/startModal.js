@@ -10,7 +10,6 @@ export class startModal{
 		
 		document.addEventListener('DOMContentLoaded', this.loadModalWindow.bind(this));
 		this.btn.addEventListener('click', this.enterName.bind(this));
-
 	}
 	loadModalWindow(){
 		this.modalWindow.classList.add('activeModal');

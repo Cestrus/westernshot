@@ -4,10 +4,8 @@
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/audioPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controllerWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modelWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/startModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/gun.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/gun.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/wanted.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/wanted.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +74,8 @@
       <workItem from="1583408087149" duration="23409000" />
       <workItem from="1583497685354" duration="624000" />
       <workItem from="1583573361374" duration="12340000" />
-      <workItem from="1583592728318" duration="14797000" />
+      <workItem from="1583592728318" duration="16164000" />
+      <workItem from="1583615206627" duration="4813000" />
     </task>
     <servers />
   </component>

@@ -8,10 +8,7 @@ export class viewWestern {
 		this.p = document.querySelector('.gamerName p');
 		this.recordTable = document.querySelector('.recordTable');
 
-		this.gamePlate.addEventListener('click', ev=>{
-			this.goMoney(50);
-			this.shot(ev);
-		});
+		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 
 		this.bank = bank;
 		this.bulletsQuantity = bulletsQuantity;
@@ -58,24 +55,25 @@ export class viewWestern {
 		this.recordTable.innerHTML = '<div class="recordResultTitle">The best shooters</div>' + str;
 	}
 
-	goMoney(coins) { //TODO начисление денег
-		if(!this.isClick){
-			this.isClick = true;
-			this.idInterval = setInterval(()=>{
-				if(!coins) {
-					clearInterval(this.idInterval);
-					this.isClick = false;
-				}
-				this.money.innerText = `BANK: ${this.bank++}$`;
-				coins--;
-			}, 30);
-		}
+	goMoney(el) { //TODO начисление денег
+		console.log(el)
+		// if(!this.isClick){
+		// 	this.isClick = true;
+		// 	this.idInterval = setInterval(()=>{
+		// 		if(!coins) {
+		// 			clearInterval(this.idInterval);
+		// 			this.isClick = false;
+		// 		}
+		// 		this.money.innerText = `BANK: ${this.bank++}$`;
+		// 		coins--;
+		// 	}, 30);
+		// }
 	}
 	shot(ev){
 		if(!this.isReloadGun){
 			this.bulletsRevolver--;
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg");`;
-			this.bullets.children[this.bullets.children.length-1].remove();
+			console.log(`url("./img/bullet/gun_${this.bulletsRevolver}.svg");`);
+			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
 			new Audio('./media/sounds/shot.wav').play();
 			this.renderHoleShot(ev);
 			if(!this.bullets.children.length){
@@ -96,13 +94,20 @@ export class viewWestern {
 				clearInterval(interval);
 			}
 			new Audio('./media/sounds/reload_bullet.wav').play();
+			console.log( `url("./img/bullet/gun_${a}.svg")`);
 			this.gun.style.backgroundImage = `url("./img/bullet/gun_${a}.svg")`;
 			a++;
 		}, 400);
 	}
 	renderHoleShot(ev){
 		let hole = document.createElement('div');
-		hole.classList.add('hole');
+		if(ev.target.tagName === 'IMG'){
+			hole.classList.add('hole-kill');
+			this.goMoney(ev.target.nextSibling);
+		}
+		else {
+			hole.classList.add('hole');
+		}
 		hole.style.top = ev.clientY - 15 + 'px';
 		hole.style.left = ev.clientX - 15 +'px';
 		hole.style.backgroundImage = this.randomHole();
@@ -110,7 +115,7 @@ export class viewWestern {
 		let interval = setTimeout(()=>{
 			hole.remove();
 			clearInterval(interval);
-		}, 500);
+		}, 300);
 	}
 	startGame(){
 		this.wantedList.forEach(el=>{
@@ -146,7 +151,7 @@ export class viewWestern {
 		let bandit = this.randomBandit();
 		if(Math.random() <= 0.2){
 			el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
-							<img src="${bandit.img}" alt="bandit"><p>cost: ${bandit.cost}</p>
+							<img src="${bandit.img}" alt="bandit"/><p>cost: ${bandit.cost}</p>
 						</div>`;
 		}
 	}

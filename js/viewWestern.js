@@ -1,5 +1,5 @@
 export class viewWestern {
-	constructor(bank, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
+	constructor(bank, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.money = document.querySelector('.money');
@@ -15,14 +15,10 @@ export class viewWestern {
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
-
-		this.isClick = false;//
-		this.idInterval = true;//
-		this.bulletsRevolver = 6;
+		this.bulletsRevolver = bulletsRevolver;
 		this.isReloadGun = false;
-		this.isEnd = false;
 
-		this.renderBank();
+		this.renderBank(bank);
 		this.renderBullets();
 		this.renderRecordTable();
 	}
@@ -38,8 +34,16 @@ export class viewWestern {
 		}
 		this.gamePlate.innerHTML = str;
 	}
-	renderBank(){
-		this.money.innerText = `BANK: ${this.bank}$`;
+	renderBank(money){
+		let interval = setInterval(()=>{
+			this.money.innerText = `BANK: ${this.bank}$`;
+			if(!money) clearInterval(interval);
+			else{
+				money--;
+				this.bank++;
+			}
+		}, 20)
+
 	}
 	renderBullets(){
 		for (let i =0; i<this.bulletsQuantity; i++){
@@ -54,56 +58,11 @@ export class viewWestern {
 		}
 		this.recordTable.innerHTML = '<div class="recordResultTitle">The best shooters</div>' + str;
 	}
-
-	goMoney(el) { //TODO начисление денег
-		console.log(el)
-		// if(!this.isClick){
-		// 	this.isClick = true;
-		// 	this.idInterval = setInterval(()=>{
-		// 		if(!coins) {
-		// 			clearInterval(this.idInterval);
-		// 			this.isClick = false;
-		// 		}
-		// 		this.money.innerText = `BANK: ${this.bank++}$`;
-		// 		coins--;
-		// 	}, 30);
-		// }
-	}
-	shot(ev){
-		if(!this.isReloadGun){
-			this.bulletsRevolver--;
-			console.log(`url("./img/bullet/gun_${this.bulletsRevolver}.svg");`);
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
-			new Audio('./media/sounds/shot.wav').play();
-			this.renderHoleShot(ev);
-			if(!this.bullets.children.length){
-				this.endGame();
-			}
-			else if(!this.bulletsRevolver){
-				this.isReloadGun = true;
-				this.bulletsRevolver = 6;
-				this.reload();
-			}
-		}
-	}
-	reload(){
-		let a = 1;
-		let interval = setInterval(()=>{
-			if(a===6) {
-				this.isReloadGun = false;
-				clearInterval(interval);
-			}
-			new Audio('./media/sounds/reload_bullet.wav').play();
-			console.log( `url("./img/bullet/gun_${a}.svg")`);
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${a}.svg")`;
-			a++;
-		}, 400);
-	}
 	renderHoleShot(ev){
 		let hole = document.createElement('div');
 		if(ev.target.tagName === 'IMG'){
 			hole.classList.add('hole-kill');
-			this.goMoney(ev.target.nextSibling);
+			this.getMoney(ev.target.nextSibling);
 		}
 		else {
 			hole.classList.add('hole');
@@ -117,24 +76,60 @@ export class viewWestern {
 			clearInterval(interval);
 		}, 300);
 	}
+	getMoney(el){
+		if(el.outerHTML){
+			let money = el.outerHTML.match(/\d{2}/);
+			this.renderBank(money);
+		}
+
+	}
+	shot(ev){
+		if(!this.isReloadGun){
+			this.bulletsRevolver--;
+			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
+			new Audio('./media/sounds/shot.wav').play();
+			this.renderHoleShot(ev);
+			if(!this.bullets.children.length){
+				this.endGame();
+			}
+			else if(!this.bulletsRevolver){
+				this.isReloadGun = true;
+				this.bulletsRevolver = 6;
+				this.reload();
+			}
+		}
+	}
 	startGame(){
 		this.wantedList.forEach(el=>{
 			let time = Math.floor(Math.random()*4000+2000);
 			setInterval(()=>{
 				this.addBandit(el).
-					then(()=>{
-						this.renderBandit(el);
-						let interval = setTimeout(()=>{
-							this.removeBandit(el).
-								then(()=>{
-									el.innerHTML = '';
-									clearInterval(interval);
-								});
-						}, 1500); //задержка на экране
-					});
+				then(()=>{
+					this.renderBandit(el);
+					let interval = setTimeout(()=>{
+						this.removeBandit(el).
+						then(()=>{
+							el.innerHTML = '';
+							clearInterval(interval);
+						});
+					}, 1500); //задержка на экране
+				});
 			},time);
 		});
 	}
+	reload(){
+		let a = 1;
+		let interval = setInterval(()=>{
+			if(a===6) {
+				this.isReloadGun = false;
+				clearInterval(interval);
+			}
+			new Audio('./media/sounds/reload_bullet.wav').play();
+			this.gun.style.backgroundImage = `url("./img/bullet/gun_${a}.svg")`;
+			a++;
+		}, 400);
+	}
+
 	addBandit(el){
 		return new Promise(function (resolve) {
 			el.classList.add('wanted-move');
@@ -150,9 +145,16 @@ export class viewWestern {
 	renderBandit(el){
 		let bandit = this.randomBandit();
 		if(Math.random() <= 0.2){
-			el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
+			if(bandit.isBandit){
+				el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
 							<img src="${bandit.img}" alt="bandit"/><p>cost: ${bandit.cost}</p>
 						</div>`;
+			}
+			else{
+				el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
+							<img src="${bandit.img}" alt="bandit"/>
+						</div>`;
+			}
 		}
 	}
 	endGame(){

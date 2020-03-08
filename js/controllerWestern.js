@@ -7,6 +7,7 @@ export class controllerWestern{
 	constructor() {		
 		this.model = new modelWestern();
 		this.view = new viewWestern(this.model.bank,
+									this.model.bulletsRevolver,
 									this.model.bulletsQuantity,
 									this.randomHole.bind(this),
 									this.randomBandit.bind(this),

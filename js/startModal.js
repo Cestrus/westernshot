@@ -15,8 +15,17 @@ export class startModal{
 	loadModalWindow(){
 		this.modalWindow.classList.add('activeModal');
 	}
+	checkName(name){
+		const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-1234567890';
+		let arrSingName = name.split('');
+		for(let i = 0; i < arrSingName.length; i++) {
+			let a = symbols.match(arrSingName[i]);
+			if (!a) return false;
+		}
+		return true;
+	}
 	enterName(){
-		if(this.input.value){
+		if(this.checkName(this.input.value)){
 			this.namePlace.innerText = this.input.value;
 			this.overlay.style.visibility = 'hidden';
 			this.modalWindow.classList.remove('activeModal');

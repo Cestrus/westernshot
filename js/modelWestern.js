@@ -37,8 +37,8 @@ export class modelWestern{
 	}
 	randomBandit(){
 			let a = Math.random();
-			if(a < 0.02) return this.arrBandits[3];
-			if(a >= 0.02 && a <= 0.15) return this.arrBandits[0];
+			if(a < 0.01) return this.arrBandits[3];
+			if(a >= 0.01 && a <= 0.15) return this.arrBandits[0];
 			if(a > 0.15 && a < 0.45) return this.arrBandits[1];
 			else return this.arrBandits[2];
 	}

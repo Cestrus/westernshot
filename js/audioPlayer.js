@@ -14,7 +14,7 @@ export class audioPlayer {
 		this.audioPlayer.innerHTML = `<p>audio control</p>
 									  <div class="audioControl d-flex">
 										  <div class="audioVolume">
-											<input type="range" class="inpAudioVolume" min="0" max="100" step="5"> 
+											<input type="range" class="inpAudioVolume" min="0" max="100" value="30" step="5"> 
 										  </div>
 										  <div class="btnAudio btnAudio-pause"></div>
 									  </div>`

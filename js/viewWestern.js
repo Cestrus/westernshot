@@ -7,7 +7,7 @@ export class viewWestern {
 		this.bullets = document.querySelector('.bullets');
 		this.p = document.querySelector('.gamerName p');
 		this.recordTable = document.querySelector('.recordTable');
-		this.gamerName = document.querySelector('.gamerName');
+		//this.gamerName = document.querySelector('.gamerName');
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 
@@ -95,6 +95,7 @@ export class viewWestern {
 			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
 			new Audio('./media/sounds/shot.wav').play();
 			this.renderHoleShot(ev);
+			this.bullets.lastChild.remove();
 			if(!this.bullets.children.length){
 				this.endGame();
 			}
@@ -168,6 +169,6 @@ export class viewWestern {
 	}
 	endGame(){
 		this.checkRecords();
-		console.log('game over');
+		this.renderBullets();
 	}
 }

@@ -7,6 +7,7 @@ export class viewWestern {
 		this.bullets = document.querySelector('.bullets');
 		this.p = document.querySelector('.gamerName p');
 		this.recordTable = document.querySelector('.recordTable');
+		this.gamerName = document.querySelector('.gamerName');
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 
@@ -17,6 +18,7 @@ export class viewWestern {
 		this.randomWoodPlank = randomWoodPlank;
 		this.bulletsRevolver = bulletsRevolver;
 		this.isReloadGun = false;
+
 
 		this.renderBank(bank);
 		this.renderBullets();
@@ -39,8 +41,14 @@ export class viewWestern {
 			this.money.innerText = `BANK: ${this.bank}$`;
 			if(!money) clearInterval(interval);
 			else{
-				money--;
-				this.bank++;
+				if(money > 0) {
+					money--;
+					this.bank++;
+				}
+				else{
+					money++;
+					this.bank--;
+				}
 			}
 		}, 20)
 
@@ -77,11 +85,9 @@ export class viewWestern {
 		}, 300);
 	}
 	getMoney(el){
-		if(el.outerHTML){
-			let money = el.outerHTML.match(/\d{2}/);
-			this.renderBank(money);
-		}
-
+		let money = -100;
+		if(el.outerHTML) money = el.outerHTML.match(/\d{2}/);
+		this.renderBank(money);
 	}
 	shot(ev){
 		if(!this.isReloadGun){
@@ -147,7 +153,7 @@ export class viewWestern {
 		if(Math.random() <= 0.2){
 			if(bandit.isBandit){
 				el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
-							<img src="${bandit.img}" alt="bandit"/><p>cost: ${bandit.cost}</p>
+							<img src="${bandit.img}" alt="bandit"/><p>cost: ${bandit.cost}$</p>
 						</div>`;
 			}
 			else{
@@ -156,6 +162,9 @@ export class viewWestern {
 						</div>`;
 			}
 		}
+	}
+	checkRecords(){
+
 	}
 	endGame(){
 		this.checkRecords();

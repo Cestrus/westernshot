@@ -16,11 +16,13 @@ export class startModal{
 		this.modalWindow.classList.add('activeModal');
 	}
 	enterName(){
-		this.namePlace.innerText = this.input.value;
-		this.overlay.style.visibility = 'hidden';
-		this.modalWindow.classList.remove('activeModal');
-		this.startAudio();
-		this.startGame();
+		if(this.input.value){
+			this.namePlace.innerText = this.input.value;
+			this.overlay.style.visibility = 'hidden';
+			this.modalWindow.classList.remove('activeModal');
+			this.startAudio();
+			this.startGame();
+		}
 	}
 
 

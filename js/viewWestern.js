@@ -1,8 +1,8 @@
 export class viewWestern {
-	constructor(bank, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
+	constructor(money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
-		this.money = document.querySelector('.money');
+		this.bank = document.querySelector('.bank');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
 		this.p = document.querySelector('.gamerName p');
@@ -11,7 +11,7 @@ export class viewWestern {
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 
-		this.bank = bank;
+		this.money = money;
 		this.bulletsQuantity = bulletsQuantity;
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
@@ -20,11 +20,10 @@ export class viewWestern {
 		this.isReloadGun = false;
 
 
-		this.renderBank(bank);
-		this.renderBullets();
-		this.renderRecordTable();
+
 	}
 
+	// рендеринг игрового поля
 	renderGamePlate(){
 		let str='';
 		for(let i=0; i<3; i++){
@@ -36,28 +35,25 @@ export class viewWestern {
 		}
 		this.gamePlate.innerHTML = str;
 	}
+	// рендеринг анимации банка
 	renderBank(money){
 		let interval = setInterval(()=>{
-			this.money.innerText = `BANK: ${this.bank}$`;
+			this.bank.innerText = `BANK: ${this.money}$`;
 			if(!money) clearInterval(interval);
 			else{
-				if(money > 0) {
-					money--;
-					this.bank++;
-				}
-				else{
-					money++;
-					this.bank--;
-				}
+				money--;
+				this.money++;
 			}
 		}, 20)
 
 	}
+	// рендер патронов
 	renderBullets(){
 		for (let i =0; i<this.bulletsQuantity; i++){
 			this.bullets.innerHTML += '<div class="bullet"></div>';
 		}
 	}
+	// рендер таблицы рекордов
 	renderRecordTable(record){
 		let str = '';
 		for(let i=0; i<5; i++){
@@ -66,11 +62,12 @@ export class viewWestern {
 		}
 		this.recordTable.innerHTML = '<div class="recordResultTitle">The best shooters</div>' + str;
 	}
+	// рендер пулевых отверстий
 	renderHoleShot(ev){
 		let hole = document.createElement('div');
 		if(ev.target.tagName === 'IMG'){
 			hole.classList.add('hole-kill');
-			this.getMoney(ev.target.nextSibling);
+			this.renderBank(ev.target.nextSibling.outerHTML.match(/\d{2}/)); // определение суммы
 		}
 		else {
 			hole.classList.add('hole');
@@ -84,11 +81,8 @@ export class viewWestern {
 			clearInterval(interval);
 		}, 300);
 	}
-	getMoney(el){
-		let money = -100;
-		if(el.outerHTML) money = el.outerHTML.match(/\d{2}/);
-		this.renderBank(money);
-	}
+
+	// рендер выстрела
 	shot(ev){
 		if(!this.isReloadGun){
 			this.bulletsRevolver--;
@@ -106,6 +100,14 @@ export class viewWestern {
 			}
 		}
 	}
+	//вход в игру
+	enterGame(){
+		this.renderBank(this.money);
+		this.renderBullets();
+		this.renderRecordTable();
+		this.startGame();
+	}
+	//старт игры
 	startGame(){
 		this.wantedList.forEach(el=>{
 			let time = Math.floor(Math.random()*4000+2000);
@@ -124,6 +126,7 @@ export class viewWestern {
 			},time);
 		});
 	}
+	// рендер перезарядки
 	reload(){
 		let a = 1;
 		let interval = setInterval(()=>{
@@ -136,19 +139,21 @@ export class viewWestern {
 			a++;
 		}, 400);
 	}
-
+	//
 	addBandit(el){
 		return new Promise(function (resolve) {
 			el.classList.add('wanted-move');
 			setTimeout(()=>resolve(), 250); // половина от css transition
 		});
 	}
+	//
 	removeBandit(el){
 		return new Promise(function (resolve) {
 			el.classList.remove('wanted-move');
 			setTimeout(()=>resolve(), 250);
 		});
 	}
+	//
 	renderBandit(el){
 		let bandit = this.randomBandit();
 		if(Math.random() <= 0.2){
@@ -164,9 +169,11 @@ export class viewWestern {
 			}
 		}
 	}
+	//
 	checkRecords(){
 
 	}
+	//
 	endGame(){
 		this.checkRecords();
 		this.renderBullets();

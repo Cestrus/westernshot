@@ -6,7 +6,7 @@ import {startModal} from "./startModal.js";
 export class controllerWestern{
 	constructor() {		
 		this.model = new modelWestern();
-		this.view = new viewWestern(this.model.bank,
+		this.view = new viewWestern(this.model.money,
 									this.model.bulletsRevolver,
 									this.model.bulletsQuantity,
 									this.randomHole.bind(this),
@@ -15,7 +15,7 @@ export class controllerWestern{
 		this.audio = new audioPlayer();		
 		this.startModal = new startModal(this.view.p,
 										 this.startAudio.bind(this),
-										 this.startGame.bind(this));
+										 this.enterGame.bind(this));
 	}
 	randomHole(){
 		return this.model.randomHole();
@@ -31,5 +31,8 @@ export class controllerWestern{
 	}
 	startGame(){
 		return this.view.startGame();
+	}
+	enterGame(){
+		return this.view.enterGame();
 	}
 }

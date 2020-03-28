@@ -23,14 +23,17 @@
 		<div class="row myRow-2 game-place">
 			<div class="col-md-2 ">
 				<div class="left-side">
-					<div class="gamerName "><p></p></div>
-					<div class="recordTable"></div>
+					<div class="gamerName"><p></p></div>
+					<div class="bestShooters"></div>
+					<div class="btnRecordTable">
+						<div>all result</div>
+					</div>
 					<div class="audioPlayer"></div>
 				</div>
 			</div>
 			<div class="col-md-8 game-plate"></div>
 			<div class="col-md-2 ">
-				<div class="result-game d-flex align-items-center"><p class="bank"></p></div>
+				<div class="bank d-flex align-items-center"><p ></p></div>
 				<div class="bullets "></div>
 				<div class="gun"></div>
 			</div>
@@ -38,20 +41,22 @@
 <!-- FOOTER -->
 		<div class="row myRow-1">
 			<div class="col-md-3 corner corner--l-b"></div>
-			<div class="col-md-6"></div>
+			<div class="col-md-6">
+				<div class="btn-start"></div>
+			</div>
 			<div class="col-md-3 corner corner--r-b"></div>
 		</div>
 	</div>
 
 	<!-- Стартовое модальное окно -->
-	<div class="myModal container-fluid" data-modal="1">
+	<div class="startModal container-fluid" data-modal="1">
 		<div class="row row-modal-1">
 			<div class="col-md-3 corner-modal"></div>
 			<div class="col-md-6"><p>enter you name</p></div>
 			<div class="col-md-3 corner-modal corner-modal--r-t"></div>
 		</div>
 		<div class="row row-modal-1">
-			<div class="col latinScrypt"><p>(only latin scrypt)</p></div>
+			<div class="col latinFont"><p>(only latin font)</p></div>
 		</div>
 		<div class="row row-modal-2 no-gutters">
 			<div class="col-md-8 align-self-center ">
@@ -67,6 +72,31 @@
 			<div class="col-md-3 corner-modal corner-modal--r-b"></div>
 		</div>
 	</div>
+
+	<!-- Модальное окно рекордов-->
+<!--	<div class="recordModal container-fluid" data-modal="1">-->
+<!--		<div class="row row-modal-1">-->
+<!--			<div class="col-md-3 corner-modal"></div>-->
+<!--			<div class="col-md-6"><p>enter you name</p></div>-->
+<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;r-t"></div>-->
+<!--		</div>-->
+<!--		<div class="row row-modal-1">-->
+<!--			<div class="col latinScrypt"><p>(only latin scrypt)</p></div>-->
+<!--		</div>-->
+<!--		<div class="row row-modal-2 no-gutters">-->
+<!--			<div class="col-md-8 align-self-center ">-->
+<!--				<input class="inputModal" type="text" placeholder="shooter">-->
+<!--			</div>-->
+<!--			<div class="col-md-4 input-group-append align-self-center">-->
+<!--				<button class="btnModal"></button>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<div class="row row-modal-1">-->
+<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;l-b"></div>-->
+<!--			<div class="col-md-6"></div>-->
+<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;r-b"></div>-->
+<!--		</div>-->
+<!--	</div>-->
 
 	<!-- Подложка под модальным окном -->
 	<div class="overlayModal" id="overlay-modal"></div>

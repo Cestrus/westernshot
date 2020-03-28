@@ -1,4 +1,4 @@
-.myModal{
+.startModal{
 	position: absolute;
 	width: 450px;
 	height: 250px;
@@ -15,7 +15,7 @@
 	top: calc(50vh - 125px);
 	left: calc(50vw - 225px);
 }
-p{
+.startModal p{
 	margin-top: 40px;
 }
 .row-modal-1{height: 20%;}
@@ -25,7 +25,7 @@ p{
 	background-image: url("../img/patterns/vintage_corner2.svg");
 	background-repeat: no-repeat;
 }
-.latinScrypt{
+.latinFont{
 	font-size: 18px;
 	margin-top: -10px;
 }

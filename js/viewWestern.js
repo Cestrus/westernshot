@@ -1,23 +1,25 @@
 export class viewWestern {
-	constructor(money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
+	constructor(gamer, money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
-		this.bank = document.querySelector('.bank');
+		this.bank = document.querySelector('.bank p');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
 		this.p = document.querySelector('.gamerName p');
-		this.recordTable = document.querySelector('.recordTable');
+		this.bestShooters = document.querySelector('.bestShooters');
 		//this.gamerName = document.querySelector('.gamerName');
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 
+		this.gamer = gamer;
 		this.money = money;
+		this.bulletsRevolver = bulletsRevolver;
 		this.bulletsQuantity = bulletsQuantity;
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
-		this.bulletsRevolver = bulletsRevolver;
 		this.isReloadGun = false;
+		this.isStart = false;
 
 
 
@@ -53,21 +55,21 @@ export class viewWestern {
 			this.bullets.innerHTML += '<div class="bullet"></div>';
 		}
 	}
-	// рендер таблицы рекордов
-	renderRecordTable(record){
+	// рендер семёрки лучших
+	renderBestShooters(record){
 		let str = '';
-		for(let i=0; i<5; i++){
+		for(let i=0; i<7; i++){
 			str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i+1}.</span><span class="shooterName">artem</span><span> 1120$
 		</span></div>`;
 		}
-		this.recordTable.innerHTML = '<div class="recordResultTitle">The best shooters</div>' + str;
+		this.bestShooters.innerHTML = '<div class="recordResultTitle">The Magnificent seven</div>' + str;
 	}
 	// рендер пулевых отверстий
 	renderHoleShot(ev){
 		let hole = document.createElement('div');
 		if(ev.target.tagName === 'IMG'){
 			hole.classList.add('hole-kill');
-			this.renderBank(ev.target.nextSibling.outerHTML.match(/\d{2}/)); // определение суммы
+			this.renderBank(ev.target.nextSibling.outerHTML.match(/\d{2}\d?/)); // определение суммы
 		}
 		else {
 			hole.classList.add('hole');
@@ -82,7 +84,7 @@ export class viewWestern {
 		}, 300);
 	}
 
-	// рендер выстрела
+	// выстрел
 	shot(ev){
 		if(!this.isReloadGun){
 			this.bulletsRevolver--;
@@ -102,15 +104,16 @@ export class viewWestern {
 	}
 	//вход в игру
 	enterGame(){
+		console.log(this.gamer.name);
 		this.renderBank(this.money);
 		this.renderBullets();
-		this.renderRecordTable();
-		this.startGame();
+		this.renderBestShooters();
+		//this.startGame();
 	}
 	//старт игры
 	startGame(){
 		this.wantedList.forEach(el=>{
-			let time = Math.floor(Math.random()*4000+2000);
+			let time = Math.floor(Math.random()*4000+2000);// интервал частоты поворота картинки
 			setInterval(()=>{
 				this.addBandit(el).
 				then(()=>{
@@ -164,7 +167,7 @@ export class viewWestern {
 			}
 			else{
 				el.innerHTML = `<div class="paper" style="transform: scaleX(-1);">
-							<img src="${bandit.img}" alt="bandit"/>
+							<img src="${bandit.img}" alt="not bandit"/><p style="display: none">cost: ${bandit.cost}$</p>
 						</div>`;
 			}
 		}

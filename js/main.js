@@ -1,5 +1,5 @@
 import {controllerWestern} from "./controllerWestern.js";
-import {startModal} from "./startModal.js";
+//import {startModal} from "./startModal.js";
 
 
 // new startModal();

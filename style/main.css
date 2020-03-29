@@ -6,11 +6,15 @@
 @import "bestShooters.css";
 @import "startModal.css";
 @import "recordModal.css";
+@import "btnStart.css";
 
 
 @font-face{
 	font-family: 'Western Dead';
 	src: url('../fonts/WesternDead.ttf');
+}
+body{
+	font-family: 'Western Dead';
 }
 .myContainer{
 	width: 100vw;

@@ -8,6 +8,7 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	border: 2px solid black;
+	border-radius: 10px;
 	box-sizing: border-box;
 	transition: all 0.5s linear;
 
@@ -29,7 +30,6 @@
 	margin: 10px auto;
 }
 .paper p {
-	font-family: 'Western Dead';
 	font-size: 1.2em;
 	color: black;
 	text-align: center;

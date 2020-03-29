@@ -6,19 +6,24 @@ import {recordModal} from "./recordModal.js";
 
 export class controllerWestern{
 	constructor() {		
-		this.model = new modelWestern();
+		this.model = new modelWestern(this.renderBestShooters.bind(this));
+
 		this.view = new viewWestern(this.model.gamer,
 									this.model.money,
 									this.model.bulletsRevolver,
 									this.model.bulletsQuantity,
 									this.randomHole.bind(this),
 									this.randomBandit.bind(this),
-									this.randomWoodPlank.bind(this));
-		this.audio = new audioPlayer();		
-		this.startModal = new startModal(this.view.p,
+									this.randomWoodPlank.bind(this),
+									this.activeRecordModal.bind(this));
+
+		this.audio = new audioPlayer();
+
+		this.startModal = new startModal(this.view.namePlace,
 										 this.startAudio.bind(this),
 										 this.enterGame.bind(this),
 										 this.model.gamer);
+
 		this.recordModal = new recordModal();
 	}
 	randomHole(){
@@ -33,12 +38,16 @@ export class controllerWestern{
 	startAudio(){
 		return this.audio.startAudio();
 	}
-	startGame(){
-		return this.view.startGame();
+	activeRecordModal(){
+		return this.recordModal.activeModal();
 	}
 	enterGame(){
 		return this.view.enterGame();
 	}
+	renderBestShooters(arr){
+		return this.view.renderBestShooters(arr);
+	}
+
 }
 
 //TODO авторизация игрока (создание объекта и запись в него данных, при повторном старте игры обнуление ряда свойств

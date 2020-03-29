@@ -25,9 +25,6 @@
 				<div class="left-side">
 					<div class="gamerName"><p></p></div>
 					<div class="bestShooters"></div>
-					<div class="btnRecordTable">
-						<div>all result</div>
-					</div>
 					<div class="audioPlayer"></div>
 				</div>
 			</div>
@@ -41,8 +38,8 @@
 <!-- FOOTER -->
 		<div class="row myRow-1">
 			<div class="col-md-3 corner corner--l-b"></div>
-			<div class="col-md-6">
-				<div class="btn-start"></div>
+			<div class="col-md-6 align-self-center ">
+				<button class="btnStart ">start</button>
 			</div>
 			<div class="col-md-3 corner corner--r-b"></div>
 		</div>
@@ -56,14 +53,14 @@
 			<div class="col-md-3 corner-modal corner-modal--r-t"></div>
 		</div>
 		<div class="row row-modal-1">
-			<div class="col latinFont"><p>(only latin font)</p></div>
+			<div class="col latinFont"><p>(only latin)</p></div>
 		</div>
 		<div class="row row-modal-2 no-gutters">
 			<div class="col-md-8 align-self-center ">
 				<input class="inputModal" type="text" placeholder="shooter">
 			</div>
 			<div class="col-md-4 input-group-append align-self-center">
-				<button class="btnModal"></button>
+				<button class="btnModal btnModal-modalStart"></button>
 			</div>
 		</div>
 		<div class="row row-modal-1">
@@ -74,33 +71,42 @@
 	</div>
 
 	<!-- Модальное окно рекордов-->
-<!--	<div class="recordModal container-fluid" data-modal="1">-->
-<!--		<div class="row row-modal-1">-->
-<!--			<div class="col-md-3 corner-modal"></div>-->
-<!--			<div class="col-md-6"><p>enter you name</p></div>-->
-<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;r-t"></div>-->
-<!--		</div>-->
-<!--		<div class="row row-modal-1">-->
-<!--			<div class="col latinScrypt"><p>(only latin scrypt)</p></div>-->
-<!--		</div>-->
-<!--		<div class="row row-modal-2 no-gutters">-->
-<!--			<div class="col-md-8 align-self-center ">-->
-<!--				<input class="inputModal" type="text" placeholder="shooter">-->
-<!--			</div>-->
-<!--			<div class="col-md-4 input-group-append align-self-center">-->
-<!--				<button class="btnModal"></button>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--		<div class="row row-modal-1">-->
-<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;l-b"></div>-->
-<!--			<div class="col-md-6"></div>-->
-<!--			<div class="col-md-3 corner-modal corner-modal&#45;&#45;r-b"></div>-->
-<!--		</div>-->
-<!--	</div>-->
+	<div class="recordModal container-fluid" data-modal="1">
+		<div class="row row-recordModal-1">
+			<div class="col-md-3 corner-modal"></div>
+			<div class="col-md-6"><p class="recordTitle">Record table</p></div>
+			<div class="col-md-3 corner-modal corner-modal--r-t"></div>
+		</div>
+		<div class="row row-recordModal-2 ">
+			<div class="col-md-8 align-self-center ">
+					<table class="recordTable">
+						<thead>
+
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+			</div>
+		</div>
+		<div class="row row-recordModal-1">
+			<div class="col-md-3 corner-modal corner-modal--l-b"></div>
+			<div class="col-md-6">
+				<div class="row justify-content-md-center">
+					<button class="btnModal btnModal__modalRecord btnModal__modalRecord-left"></button>
+					<button class="btnModal btnModal__modalRecord btnModal__modalRecord-right"></button>
+				</div>
+				<div class="row justify-content-md-center">
+					<button class="btnModal btnModal__modalRecord btnModal__modalRecord-close"></button>
+				</div>
+			</div>
+			<div class="col-md-3 corner-modal corner-modal--r-b"></div>
+		</div>
+	</div>
+
 
 	<!-- Подложка под модальным окном -->
 	<div class="overlayModal" id="overlay-modal"></div>
-
 
 	<script src="./js/main.js" type="module"></script>
 </body>

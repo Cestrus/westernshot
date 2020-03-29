@@ -2,7 +2,7 @@
 export class startModal{
 	constructor(namePlace, startAudio, enterGame, gamer) {
 		this.modalWindow = document.querySelector('.startModal');
-		this.btn = document.querySelector('.btnModal');
+		this.btn = document.querySelector('.btnModal-modalStart');
 		this.input = document.querySelector('.inputModal');
 		this.overlay = document.querySelector('.overlayModal');
 		this.namePlace = namePlace;
@@ -14,7 +14,7 @@ export class startModal{
 		this.btn.addEventListener('click', this.enterName.bind(this));
 	}
 	loadModalWindow(){
-		this.modalWindow.classList.add('activeModal');
+		this.modalWindow.classList.add('activeStartModal');
 	}
 	checkName(name){
 		const symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-1234567890{}[],.;:' ";
@@ -30,7 +30,7 @@ export class startModal{
 			this.gamer.name = this.input.value;
 			this.namePlace.innerText = this.input.value;
 			this.overlay.style.visibility = 'hidden';
-			this.modalWindow.classList.remove('activeModal');
+			this.modalWindow.classList.remove('activeStartModal');
 			this.startAudio();
 			this.enterGame();
 		}

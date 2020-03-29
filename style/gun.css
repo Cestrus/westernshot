@@ -1,6 +1,7 @@
 .bullets{
 	height: 30%;
 	width: 100%;
+	visibility: hidden;
 }
 .bullet{
 	display: inline-block;
@@ -12,6 +13,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+
 }
 .gun{
 	height: 40%;

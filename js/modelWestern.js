@@ -1,5 +1,5 @@
 export class modelWestern{
-	constructor() {
+	constructor(renderBestShooters) {
 		this.money = 0;
 		this.bulletsRevolver = 6;
 		this.bulletsQuantity = 60;
@@ -22,19 +22,16 @@ export class modelWestern{
 			'(./img/background/wood-plank_4.png)',
 			'(./img/background/wood-plank_5.png)',
 		];
-		this.arrRecords = [
-			{name1:'', money1: 0},
-			{name2:'', money2: 0},
-			{name3:'', money3: 0},
-			{name4:'', money4: 0},
-			{name5:'', money5: 0},
-		];
 		this.gamer = {
+			id: 0,
 			name: '',
 			bank: 0,
 			gameTime: '',
-		}
-		//this.loadRecords();
+			inTarget: 0,
+			percent: 0,
+			rating: 0,
+		};
+		this.loadRecords(renderBestShooters);
 	}
 	randomHole(){
 		return this.arrHoleShot[Math.floor(Math.random() * this.arrHoleShot.length)];
@@ -49,21 +46,31 @@ export class modelWestern{
 	randomWoodPlank(){
 		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
-	loadRecords(){
-		// for(let i=0; i<5; i++){
-		// 	if(localStorage.getItem(`name`+i+1)) {
-		// 		this.arrRecords[i][`name`${i+1}] = localStorage.getItem(`name` + i + 1);
-		// 		this.arrRecords[i][`money`${i+1}] = localStorage.getItem(`money` + i + 1);
-		// 	}
-		// 	else break;
-		// }
+	loadRecords(renderBestShooters){
+		fetch('https://spreadsheets.google.com/feeds/list/1lPeSAtYq7t7O-TUUxmM9ApMK4ayFEbUTIyOLf_GCO9k/od6/public/values?alt=json').
+				then(res => res.json()).
+				then(list => {
+					let arr = [];
+					list.feed.entry.forEach(el =>
+						arr.push({id:`${el.gsx$id.$t}`,
+							name:`${el.gsx$name.$t}`,
+							bank:`${el.gsx$bank.$t}`,
+							gameTime:`${el.gsx$bank.$t}`,
+							inTarget:`${el.gsx$intarget.$t}`,
+							percent:`${el.gsx$percent.$t}`,
+							rating:`${el.gsx$rating.$t}`})
+
+					);
+					return arr;
+				}).
+				then(arr => renderBestShooters(arr));
 	}
 	checkRecord(name, money){
-		this.arrRecords.forEach(el=>{
-			if(el[1] < money){
-
-			}
-		})
+		// this.arrRecords.forEach(el=>{
+		// 	if(el[1] < money){
+		//
+		// 	}
+		// })
 	}
 
 }

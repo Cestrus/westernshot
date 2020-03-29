@@ -6,7 +6,6 @@
 	margin: 0 auto;
 	background-image: url("../img/background/wild-west.jpg");
 	background-size: 100% 100%;
-	font-family: 'Western Dead';
 	font-size: 25px;
 	text-align: center;
 	opacity: 0;
@@ -40,7 +39,6 @@
 	height: 40px;
 	width: 200px;
 	background-color: rgb(142, 72, 28);
-	font-family: 'Western Dead';
 	font-size: 25px;
 	margin: 0 0 5px 70px;
 	border: 1px solid black;
@@ -51,12 +49,22 @@
 	width: 70px;
 	padding: 0;
 	margin-bottom: 5px;
-	background-color: rgb(142, 72, 28);
+	background-color: rgba(142, 72, 28, 0.6);
 	background-size: contain;
 	background-position: center;
 	background-image: url("../img/other/btn-gun.svg");
 	background-repeat: no-repeat;
 }
+/*убираем обводку*/
+.btnModal:active, .btnModal:hover, .btnModal:focus {
+	outline: 0;
+	outline-offset: 0;
+}
+
+.activeStartModal{
+	 opacity: 1;
+	 visibility: visible;
+ }
 .overlayModal{
 	opacity: 0.8;
 	visibility: visible;
@@ -68,8 +76,4 @@
 	height: 100%;
 	z-index: 20;
 	transition: all 0.3s;
-}
-.activeModal{
-	opacity: 1;
-	visibility: visible;
 }

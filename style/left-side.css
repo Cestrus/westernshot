@@ -33,6 +33,7 @@
 	box-sizing: border-box;
 	color: black;
 	height: calc(100%/8 - 2px);
+	line-height: 40px;
 }
 .recordResult span{
 	margin-left: 5px;

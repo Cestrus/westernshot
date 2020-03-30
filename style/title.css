@@ -3,16 +3,10 @@
 	text-align: center;
 	color: black;
 }
-.top-gun-left{
+.top-gun {
 	background-image: url("../img/other/btn-gun.svg");
 	background-position: center;
-	background-size: contain;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
-.top-gun-right{
-	background-image: url("../img/other/btn-gun.svg");
-	transform: scaleX(-1);
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
+.top-gun-right{transform: scaleX(-1);}

@@ -26,11 +26,12 @@ export class modelWestern{
 			id: 0,
 			name: '',
 			bank: 0,
-			gameTime: '',
+			gameTime: 0,
 			inTarget: 0,
 			percent: 0,
 			rating: 0,
 		};
+		this.records = [];
 		this.loadRecords(renderBestShooters);
 	}
 	randomHole(){
@@ -50,20 +51,18 @@ export class modelWestern{
 		fetch('https://spreadsheets.google.com/feeds/list/1lPeSAtYq7t7O-TUUxmM9ApMK4ayFEbUTIyOLf_GCO9k/od6/public/values?alt=json').
 				then(res => res.json()).
 				then(list => {
-					let arr = [];
 					list.feed.entry.forEach(el =>
-						arr.push({id:`${el.gsx$id.$t}`,
+						this.records.push({id:`${el.gsx$id.$t}`,
 							name:`${el.gsx$name.$t}`,
 							bank:`${el.gsx$bank.$t}`,
 							gameTime:`${el.gsx$bank.$t}`,
 							inTarget:`${el.gsx$intarget.$t}`,
 							percent:`${el.gsx$percent.$t}`,
 							rating:`${el.gsx$rating.$t}`})
-
 					);
-					return arr;
+					return this.records;
 				}).
-				then(arr => renderBestShooters(arr));
+				then(records => renderBestShooters(records));
 	}
 	checkRecord(name, money){
 		// this.arrRecords.forEach(el=>{

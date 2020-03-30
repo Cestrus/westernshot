@@ -1,5 +1,5 @@
 export class viewWestern {
-	constructor(gamer, money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank, activeRecordModal) {
+	constructor(gamer, money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.bank = document.querySelector('.bank p');
@@ -8,6 +8,7 @@ export class viewWestern {
 		this.namePlace = document.querySelector('.gamerName p');
 		this.bestShooters = document.querySelector('.bestShooters');
 		this.btnStart = document.querySelector('.btnStart');
+		this.timer = document.querySelector('.timer');
 
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
@@ -21,6 +22,7 @@ export class viewWestern {
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
 		this.activeRecordModal = activeRecordModal;
+		this.startTimer = startTimer;
 		this.isReloadGun = false;
 		this.isStart = false;
 
@@ -65,18 +67,22 @@ export class viewWestern {
 		let str = '';
 		for (let i = 0; i < 7; i++) {
 			if (arrRecords[i]) {
-				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arrRecords[i].name}</span><span> ${arrRecords[i].bank} </span><span> ${arrRecords[i].percent} </span><span> ${arrRecords[i].rating} </span></div>`;
+				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arrRecords[i].name}</span><span> ${arrRecords[i].bank}$ </span><span> ${arrRecords[i].percent} </span><span> ${arrRecords[i].rating} </span></div>`;
 			} else break;
 		}
 		str+=`<div class="recordResult btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
 		this.bestShooters.innerHTML = '<div class="recordResultTitle">The Magnificent seven</div>' + str;
 		document.querySelector('.btnRecordTable').addEventListener('click', this.activeRecordModal);
 	}
+	//рендер таймера
+	renderTimer(){
+		this.timer.innerHTML = '<p>Timer: </p><p>&#09;</p>';
+	}
 	//вход в игру
 	enterGame(){
 		this.renderBank(this.money);
 		this.renderBullets();
-		// this.renderBestShooters();
+		this.renderTimer();
 		//this.startGame();
 	}
 
@@ -153,7 +159,7 @@ export class viewWestern {
 	renderHoleShot(ev){
 		let hole = document.createElement('div');
 		if(ev.target.tagName === 'IMG'){
-			hole.classList.add('hole-kill');
+			hole.classList.add('hole', 'hole-kill');
 			this.renderBank(ev.target.nextSibling.outerHTML.match(/\d{2}\d?/)); // определение суммы
 			this.gamer.inTarget++;
 		}
@@ -185,10 +191,17 @@ export class viewWestern {
 
 	// ====== СТАРТ ИГРЫ ======
 
+	// рендер тайминга
+	renderTiming(str){
+		document.querySelector('.timer :nth-child(2)').innerText = `${str}`;
+	}
+
 	//старт игры
 	startGame(){
+		// this.isStart = true;
 		this.btnStart.classList.add('btnStart-hidden');
 		this.bullets.style.visibility = 'visible';
+		this.startTimer();
 		this.goBandits();
 	}
 

@@ -1,9 +1,9 @@
 @import "title.css";
 @import "corner.css";
-@import "gun.css";
+@import "right-side.css";
 @import "wanted.css";
 @import "audioPlayer.css";
-@import "bestShooters.css";
+@import "left-side.css";
 @import "startModal.css";
 @import "recordModal.css";
 @import "btnStart.css";
@@ -41,13 +41,6 @@ body{
 .left-side{
 	width: 100%;
 	height: 100%;
-}
-.bank{
-	font-family: 'Western Dead';
-	font-size: 2em;
-	color: black;
-	text-align: center;
-	height: 30%;
 }
 .game-place:hover{
 	cursor: url('https://cestrus.github.io/westernshot/img/control/aim.cur') , crosshair;

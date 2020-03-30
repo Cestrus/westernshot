@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/style/btnStart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/otherModules/timer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/other/s-l400.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/audioPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controllerWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modelWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/recordModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/startModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/audioPlayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/audioPlayer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/bestShooters.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/bestShooters.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/gun.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/gun.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/recordModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/startModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/bestShooters.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/left-side.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/btnStart.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/btnStart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/gun.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/right-side.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/recordModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/recordModal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/startModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/startModal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/wanted.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/wanted.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -52,11 +51,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myProject\Western\media" />
+      <recent name="D:\myProject\Western\style" />
+      <recent name="D:\myProject\Western\style\modalWindows" />
+      <recent name="D:\myProject\Western\js\otherModules" />
+      <recent name="D:\myProject\Western\js\western" />
+      <recent name="D:\myProject\Western\js\modalWindows" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -103,7 +106,10 @@
       <workItem from="1585315645725" duration="16996000" />
       <workItem from="1585379772944" duration="4551000" />
       <workItem from="1585403003602" duration="24675000" />
-      <workItem from="1585472408218" duration="16669000" />
+      <workItem from="1585472408218" duration="24895000" />
+      <workItem from="1585551090437" duration="4376000" />
+      <workItem from="1585566138245" duration="4814000" />
+      <workItem from="1585590479181" duration="1824000" />
     </task>
     <servers />
   </component>
@@ -115,18 +121,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="633" y="283" key="#Menus_and_Toolbars/0.0.1920.1040@0.0.1920.1040" timestamp="1583358424929" />
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583587519471">
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585590518051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583587519471" />
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585590518051" />
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1583358419990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583358419990" />
-    <state x="668" y="162" key="SettingsEditor" timestamp="1585495372068">
+    <state x="668" y="162" key="SettingsEditor" timestamp="1585512176992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585495372068" />
+    <state x="668" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585512176992" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583581901194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

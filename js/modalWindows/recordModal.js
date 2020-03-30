@@ -1,11 +1,11 @@
 export class recordModal{
-	constructor(results) {
+	constructor(records) {
 		this.recordModal = document.querySelector('.recordModal');
 		this.recordTable = document.querySelector('.recordTable');
 		this.btnLeft = document.querySelector('.btnModal__modalRecord-left');
 		this.btnRight = document.querySelector('.btnModal__modalRecord-right');
 		this.overlay = document.querySelector('.overlayModal');
-		this.reults = results;
+		this.records = records;
 		document.querySelector('.btnModal__modalRecord-close').addEventListener('click', this.close.bind(this));
 		this.btnLeft.addEventListener('click', this.left.bind(this));
 		this.btnRight.addEventListener('click', this.right.bind(this));
@@ -17,12 +17,13 @@ export class recordModal{
 	activeModal(){
 		this.recordModal.classList.add('activeRecordModal');
 		this.overlay.style.visibility = 'visible';
+		this.renderTable();
 	}
 	left(){
-		console.log('left')
+
 	}
 	right(){
-		console.log('right')
+
 	}
 	close(){
 		this.overlay.style.visibility = 'hidden';

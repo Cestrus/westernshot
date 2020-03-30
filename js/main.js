@@ -1,4 +1,4 @@
-import {controllerWestern} from "./controllerWestern.js";
+import {controllerWestern} from "./western/controllerWestern.js";
 //import {startModal} from "./startModal.js";
 
 

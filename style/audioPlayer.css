@@ -1,6 +1,6 @@
 .audioPlayer{
 	width: 100%;
-	height: 20%;
+	height: 25%;
 }
 .audioPlayer p{
 	font-size: 1.3em;
@@ -9,8 +9,9 @@
 }
 .audioVolume{
 	width: 80%;
+	margin: 5px 0;
 }
-.inpAudioVolume{
+.inpAudioVolumeShot, .inpAudioVolumeMusic{
 	-webkit-appearance: none;
 	cursor: pointer;
 	appearance: none;
@@ -19,7 +20,7 @@
 	background: black;
 	outline: none;
 }
-.inpAudioVolume::-webkit-slider-thumb{
+.inpAudioVolumeShot::-webkit-slider-thumb, .inpAudioVolumeMusic::-webkit-slider-thumb{
 	-webkit-appearance: none;
 	appearance: none;
 	width: 15px;
@@ -27,7 +28,7 @@
 	border-radius: 50%;
 	background-color: black;
 }
-.inpAudioVolume::-moz-range-thumb{
+.inpAudioVolumeShot::-moz-range-thumb, .inpAudioVolumeMusic::-moz-range-thumb{
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
@@ -41,6 +42,7 @@
 	background-size: 50%;
 	background-position: 50%;
 	background-repeat: no-repeat;
+	margin: 5px 0;
 }
 .btnAudio:hover{cursor: pointer}
 .btnAudio-play{

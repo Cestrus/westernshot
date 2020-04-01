@@ -1,11 +1,11 @@
 export class viewWestern {
-	constructor(gamer, money, bulletsRevolver, bulletsQuantity, randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
+	constructor(gamer, bulletsRevolver, bulletsQuantity, audio, randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.bank = document.querySelector('.bank p');
 		this.gun = document.querySelector('.gun');
 		this.bullets = document.querySelector('.bullets');
-		this.namePlace = document.querySelector('.gamerName p');
+		this.gamerName = document.querySelector('.gamerName');
 		this.bestShooters = document.querySelector('.bestShooters');
 		this.btnStart = document.querySelector('.btnStart');
 		this.timer = document.querySelector('.timer');
@@ -15,9 +15,9 @@ export class viewWestern {
 		this.btnStart.addEventListener('click', this.startGame.bind(this));
 
 		this.gamer = gamer;
-		this.money = money;
 		this.bulletsRevolver = bulletsRevolver;
 		this.bulletsQuantity = bulletsQuantity;
+		this.audio = audio;		
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
@@ -25,10 +25,8 @@ export class viewWestern {
 		this.startTimer = startTimer;
 		this.isReloadGun = false;
 		this.isStart = false;
-
-
-
-
+		
+		this.enterGame()
 	}
 	// рендер игрового поля
 	renderGamePlate(){
@@ -45,14 +43,14 @@ export class viewWestern {
 
 	// ====== ВХОД В ИГРУ ======
 
-	// рендер анимации банка
+	// рендер банка
 	renderBank(money){
 		let interval = setInterval(()=>{
-			this.bank.innerText = `BANK: ${this.money}$`;
+			this.bank.innerText = `BANK: ${this.gamer.bank}$`;
 			if(!money) clearInterval(interval);
 			else{
 				money--;
-				this.money++;
+				this.gamer.bank++;
 			}
 		}, 20)
 	}
@@ -61,6 +59,10 @@ export class viewWestern {
 		for (let i =0; i<this.bulletsQuantity; i++){
 			this.bullets.innerHTML += '<div class="bullet"></div>';
 		}
+	}
+	// рендер имени игрока
+	renderGamerName(){
+		this.gamerName.innerHTML = `<p>${this.gamer.name}</p>`;
 	}
 	// рендер семёрки лучших игроков
 	renderBestShooters(arrRecords) {
@@ -80,7 +82,10 @@ export class viewWestern {
 	}
 	//вход в игру
 	enterGame(){
-		this.renderBank(this.money);
+		this.gun.style.visibility = 'visible';
+		this.btnStart.classList.remove('btnStart-hidden');
+		this.renderGamerName();
+		this.renderBank(this.gamer.bank);
 		this.renderBullets();
 		this.renderTimer();
 		//this.startGame();
@@ -123,12 +128,12 @@ export class viewWestern {
 		this.wantedList.forEach(el=>{
 			let time = Math.floor(Math.random()*4000+2000);// интервал частоты поворота картинки
 			setInterval(()=>{
-				this.addBandit(el).
-				then(()=>{
+				this.addBandit(el)
+				.then(()=>{
 					this.renderBandit(el);
 					let interval = setTimeout(()=>{
-						this.removeBandit(el).
-						then(()=>{
+						this.removeBandit(el)
+						.then(()=>{
 							el.innerHTML = '';
 							clearInterval(interval);
 						});
@@ -139,19 +144,21 @@ export class viewWestern {
 	}
 	// выстрел
 	shot(ev){
-		if(!this.isReloadGun){
-			this.bulletsRevolver--;
-			this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
-			new Audio('./media/sounds/shot.wav').play();
-			this.renderHoleShot(ev);
-			this.bullets.lastChild.remove();
-			if(!this.bullets.children.length){
-				this.endGame();
-			}
-			else if(!this.bulletsRevolver){
-				this.isReloadGun = true;
-				this.bulletsRevolver = 6;
-				this.reloadGun();
+		if(this.isStart){
+			if(!this.isReloadGun){
+				this.bulletsRevolver--;
+				this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
+				this.audio.shot.play();
+				this.renderHoleShot(ev);
+				this.bullets.lastChild.remove();
+				if(!this.bullets.children.length){
+					this.endGame();
+				}
+				else if(!this.bulletsRevolver){
+					this.isReloadGun = true;
+					this.bulletsRevolver = 6;
+					this.reloadGun();
+				}
 			}
 		}
 	}
@@ -183,7 +190,7 @@ export class viewWestern {
 				this.isReloadGun = false;
 				clearInterval(interval);
 			}
-			new Audio('./media/sounds/reload_bullet.wav').play();
+			this.audio.reload.play();
 			this.gun.style.backgroundImage = `url("./img/bullet/gun_${a}.svg")`;
 			a++;
 		}, 400);
@@ -198,7 +205,7 @@ export class viewWestern {
 
 	//старт игры
 	startGame(){
-		// this.isStart = true;
+		this.isStart = true;
 		this.btnStart.classList.add('btnStart-hidden');
 		this.bullets.style.visibility = 'visible';
 		this.startTimer();

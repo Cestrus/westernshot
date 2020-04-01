@@ -1,9 +1,10 @@
 import {controllerWestern} from "./western/controllerWestern.js";
-//import {startModal} from "./startModal.js";
+import {startModal} from "./modalWindows/startModal.js";
 
 
-// new startModal();
-new controllerWestern();
+new startModal(gamerName => new controllerWestern(gamerName));
+
+
 
 
 

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Western shot</title>
+	<link rel="shortcut icon" href="./img/cross-guns.ico" type="image/x-icon">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="./style/main.css">
 </head>
@@ -23,7 +24,7 @@
 		<div class="row myRow-2 game-place">
 			<div class="col-md-2 ">
 				<div class="left-side">
-					<div class="gamerName"><p></p></div>
+					<div class="gamerName"></div>
 					<div class="bestShooters"></div>
 					<div class="audioPlayer"></div>
 				</div>
@@ -32,7 +33,7 @@
 			<div class="col-md-2 ">
 				<div class="timer"></div>
 				<div class="bank d-flex align-items-center"><p></p></div>
-				<div class="bullets "></div>
+				<div class="bullets"></div>
 				<div class="gun"></div>
 			</div>
 		</div>
@@ -40,37 +41,15 @@
 		<div class="row myRow-1">
 			<div class="col-md-3 corner corner--l-b"></div>
 			<div class="col-md-6 align-self-center ">
-				<button class="btnStart ">start</button>
+				<button class="btnStart btnStart-hidden">start</button>
 			</div>
 			<div class="col-md-3 corner corner--r-b"></div>
 		</div>
 	</div>
 
 	<!-- Стартовое модальное окно -->
-	<div class="startModal container-fluid" data-modal="1">
-		<div class="row row-modal-1">
-			<div class="col-md-3 corner-modal"></div>
-			<div class="col-md-6"><p>enter you name</p></div>
-			<div class="col-md-3 corner-modal corner-modal--r-t"></div>
-		</div>
-		<div class="row row-modal-1">
-			<div class="col latinFont"><p>(only latin)</p></div>
-		</div>
-		<div class="row row-modal-2 no-gutters">
-			<div class="col-md-8 align-self-center ">
-				<input class="inputModal" type="text" placeholder="shooter">
-			</div>
-			<div class="col-md-4 input-group-append align-self-center">
-				<button class="btnModal btnModal-modalStart"></button>
-			</div>
-		</div>
-		<div class="row row-modal-1">
-			<div class="col-md-3 corner-modal corner-modal--l-b"></div>
-			<div class="col-md-6"></div>
-			<div class="col-md-3 corner-modal corner-modal--r-b"></div>
-		</div>
-	</div>
-
+	<div class="startModal container-fluid" data-modal="1"></div>
+	
 	<!-- Модальное окно рекордов-->
 	<div class="recordModal container-fluid" data-modal="1">
 		<div class="row row-recordModal-1">
@@ -106,8 +85,19 @@
 	</div>
 
 
-	<!-- Подложка под модальным окном -->
+	<!-- Подложка под модальными окнами -->
 	<div class="overlayModal" id="overlay-modal"></div>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+
+	<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+
+
+	<script defer src="./js/firebase/init-firebase.js"></script>
+
 
 	<script src="./js/main.js" type="module"></script>
 </body>

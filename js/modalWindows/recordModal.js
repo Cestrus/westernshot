@@ -11,6 +11,11 @@ export class recordModal{
 		this.btnRight.addEventListener('click', this.right.bind(this));
 
 	}
+	renderWindow(){
+		this.recordModal.innerHTML = `
+			
+		`
+	}
 	renderTable(){
 
 	}

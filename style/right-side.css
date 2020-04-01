@@ -39,6 +39,7 @@
 	background-position: top;
 	background-size: 60%;
 	background-image: url("../img/bullet/gun_6.svg");
+	visibility: hidden;
 }
 .hole{
 	position: absolute;

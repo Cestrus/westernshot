@@ -1,5 +1,5 @@
 export class modelWestern{
-	constructor(renderBestShooters) {
+	constructor(gamerName, renderBestShooters) {
 		this.money = 0;
 		this.bulletsRevolver = 6;
 		this.bulletsQuantity = 60;
@@ -23,13 +23,13 @@ export class modelWestern{
 			'(./img/background/wood-plank_5.png)',
 		];
 		this.gamer = {
-			id: 0,
-			name: '',
-			bank: 0,
+			name: gamerName,
+			bank: this.money,
 			gameTime: 0,
 			inTarget: 0,
 			percent: 0,
 			rating: 0,
+			date: '',
 		};
 		this.records = [];
 		this.loadRecords(renderBestShooters);
@@ -48,9 +48,9 @@ export class modelWestern{
 		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
 	loadRecords(renderBestShooters){
-		fetch('https://spreadsheets.google.com/feeds/list/1lPeSAtYq7t7O-TUUxmM9ApMK4ayFEbUTIyOLf_GCO9k/od6/public/values?alt=json').
-				then(res => res.json()).
-				then(list => {
+		fetch('https://spreadsheets.google.com/feeds/list/1lPeSAtYq7t7O-TUUxmM9ApMK4ayFEbUTIyOLf_GCO9k/od6/public/values?alt=json')
+				.then(res => res.json())
+				.then(list => {
 					list.feed.entry.forEach(el =>
 						this.records.push({id:`${el.gsx$id.$t}`,
 							name:`${el.gsx$name.$t}`,
@@ -61,8 +61,8 @@ export class modelWestern{
 							rating:`${el.gsx$rating.$t}`})
 					);
 					return this.records;
-				}).
-				then(records => renderBestShooters(records));
+				})
+				.then(records => renderBestShooters(records));
 	}
 	checkRecord(name, money){
 		// this.arrRecords.forEach(el=>{

@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/otherModules/timer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/recordModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/startModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/bestShooters.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/left-side.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/btnStart.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/btnStart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/gun.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/right-side.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/recordModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/recordModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/startModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/startModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modalWindows/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/recordModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modalWindows/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/startModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/western/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/western/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/western/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/audioPlayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/audioPlayer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/left-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/left-side.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/right-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/right-side.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,8 @@
       <workItem from="1585472408218" duration="24895000" />
       <workItem from="1585551090437" duration="4376000" />
       <workItem from="1585566138245" duration="4814000" />
-      <workItem from="1585590479181" duration="1824000" />
+      <workItem from="1585590479181" duration="2008000" />
+      <workItem from="1585736040842" duration="1359000" />
     </task>
     <servers />
   </component>

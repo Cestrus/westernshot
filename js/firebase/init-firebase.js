@@ -1,24 +1,19 @@
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAoVl54rOWuur78rHHIBg9bUVrNMdU02As",
-    authDomain: "westernshot-2ebea.firebaseapp.com",
-    databaseURL: "https://westernshot-2ebea.firebaseio.com",
-    projectId: "westernshot-2ebea",
-    storageBucket: "westernshot-2ebea.appspot.com",
-    messagingSenderId: "212575882209",
-    appId: "1:212575882209:web:174c6774feadb5dd03e0a0"
-  };
-  
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-//const defaultFirestore = defaultProject.firestore();
+firebase.initializeApp({
+    apiKey: "AIzaSyDgqzf8VG445dVarbHHg-UaaDl8YPydwww",
+    authDomain: "western-6daf2.firebaseapp.com",
+    databaseURL: "https://western-6daf2.firebaseio.com",
+    projectId: "western-6daf2",
+    storageBucket: "western-6daf2.appspot.com",
+    messagingSenderId: "449356812730",
+    appId: "1:449356812730:web:c048fe9b7ac8958b21cd83"
 
-const db = firebase.firestore();
-console.log(db.doc("westernshot/LlkkFqi52DT8uDqowClQ"));
+});
+
+export const dataFromFirebase = firebase.firestore();
 
 
 
-  
+
 
 
 

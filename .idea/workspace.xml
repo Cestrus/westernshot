@@ -4,16 +4,12 @@
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/firebase/init-firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/firebase/init-firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modalWindows/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/recordModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modalWindows/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modalWindows/startModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/audioPlayer.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/audioPlayer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/left-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/left-side.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/right-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/right-side.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.юд.юдббьлг78ртшотеинрмапувсакыцйФфцЫАКСЧЕУЫКЦВФУЙ2Ы1ФЙ2ёцу4ку53е64н7г86нш97щг80=хÐ-ъх=" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +101,8 @@
       <workItem from="1585551090437" duration="4376000" />
       <workItem from="1585566138245" duration="4814000" />
       <workItem from="1585590479181" duration="2008000" />
-      <workItem from="1585736040842" duration="1359000" />
+      <workItem from="1585736040842" duration="23556000" />
+      <workItem from="1585809992207" duration="1941000" />
     </task>
     <servers />
   </component>
@@ -117,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="633" y="283" key="#Menus_and_Toolbars/0.0.1920.1040@0.0.1920.1040" timestamp="1583358424929" />
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585590518051">
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585740991479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585590518051" />
+    <state x="689" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585740991479" />
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1583358419990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

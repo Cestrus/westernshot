@@ -1,5 +1,5 @@
 export class viewWestern {
-	constructor(gamer, bulletsRevolver, bulletsQuantity, audio, randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
+	constructor(gamer, bulletsRevolver, bulletsQuantity, audio,randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.bank = document.querySelector('.bank p');
@@ -10,14 +10,14 @@ export class viewWestern {
 		this.btnStart = document.querySelector('.btnStart');
 		this.timer = document.querySelector('.timer');
 
-
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 		this.btnStart.addEventListener('click', this.startGame.bind(this));
 
 		this.gamer = gamer;
 		this.bulletsRevolver = bulletsRevolver;
 		this.bulletsQuantity = bulletsQuantity;
-		this.audio = audio;		
+		this.audio = audio;
+		//this.records = records;
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
@@ -25,7 +25,7 @@ export class viewWestern {
 		this.startTimer = startTimer;
 		this.isReloadGun = false;
 		this.isStart = false;
-		
+
 		this.enterGame()
 	}
 	// рендер игрового поля
@@ -65,12 +65,13 @@ export class viewWestern {
 		this.gamerName.innerHTML = `<p>${this.gamer.name}</p>`;
 	}
 	// рендер семёрки лучших игроков
-	renderBestShooters(arrRecords) {
+	renderBestShooters(arr) {
 		let str = '';
 		for (let i = 0; i < 7; i++) {
-			if (arrRecords[i]) {
-				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arrRecords[i].name}</span><span> ${arrRecords[i].bank}$ </span><span> ${arrRecords[i].percent} </span><span> ${arrRecords[i].rating} </span></div>`;
-			} else break;
+			if(arr[i]) {
+				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arr[i].name}</span><span> ${arr[i].bank}$ </span><span> ${arr[i].inTarget}</span></div>`;
+			}
+			else {str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>vacancy</span></div>`;}
 		}
 		str+=`<div class="recordResult btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
 		this.bestShooters.innerHTML = '<div class="recordResultTitle">The Magnificent seven</div>' + str;
@@ -88,7 +89,7 @@ export class viewWestern {
 		this.renderBank(this.gamer.bank);
 		this.renderBullets();
 		this.renderTimer();
-		//this.startGame();
+		//this.renderBestShooters(this.records);
 	}
 
 	// ====== РЕНДЕР БАНДИТОВ И ВЫСТРЕЛОВ ======

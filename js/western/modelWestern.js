@@ -1,5 +1,5 @@
 export class modelWestern{
-	constructor(gamerName, renderBestShooters) {
+	constructor(gamerName, dataFromFirebase) {
 		this.money = 0;
 		this.bulletsRevolver = 6;
 		this.bulletsQuantity = 60;
@@ -31,8 +31,9 @@ export class modelWestern{
 			rating: 0,
 			date: '',
 		};
+		this.db = dataFromFirebase;
 		this.records = [];
-		this.loadRecords(renderBestShooters);
+		//this.loadData(sendData);
 	}
 	randomHole(){
 		return this.arrHoleShot[Math.floor(Math.random() * this.arrHoleShot.length)];
@@ -47,29 +48,21 @@ export class modelWestern{
 	randomWoodPlank(){
 		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
-	loadRecords(renderBestShooters){
-		fetch('https://spreadsheets.google.com/feeds/list/1lPeSAtYq7t7O-TUUxmM9ApMK4ayFEbUTIyOLf_GCO9k/od6/public/values?alt=json')
-				.then(res => res.json())
-				.then(list => {
-					list.feed.entry.forEach(el =>
-						this.records.push({id:`${el.gsx$id.$t}`,
-							name:`${el.gsx$name.$t}`,
-							bank:`${el.gsx$bank.$t}`,
-							gameTime:`${el.gsx$bank.$t}`,
-							inTarget:`${el.gsx$intarget.$t}`,
-							percent:`${el.gsx$percent.$t}`,
-							rating:`${el.gsx$rating.$t}`})
-					);
-					return this.records;
-				})
-				.then(records => renderBestShooters(records));
+	loadData(){
+		return (this.db.collection("shooters")
+			.get()
+			.then(query => {
+				query.forEach(shooter => {
+					if(shooter.exists){
+						this.records.push(shooter.data());
+					}
+				});
+				return this.records;
+			})
+		)
 	}
 	checkRecord(name, money){
-		// this.arrRecords.forEach(el=>{
-		// 	if(el[1] < money){
-		//
-		// 	}
-		// })
+
 	}
 
 }

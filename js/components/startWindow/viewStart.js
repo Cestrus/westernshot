@@ -1,26 +1,25 @@
-//import {audioPlayer} from '../otherModules/audioPlayer.js';
-
-export class startModal{
-	constructor(enterGame) {
+export class ViewStart {
+	constructor(enterGame, checkName) {
 		this.modalWindow = document.querySelector('.startModal');
+		this.checkName = checkName;
 		this.enterGame = enterGame;
-		document.addEventListener('DOMContentLoaded',() => {		
+		document.addEventListener('DOMContentLoaded',() => {
 			this.renderModal();
 			this.btn = document.querySelector('.btnModal-modalStart');
 			this.input = document.querySelector('.inputModal');
 			this.overlay = document.querySelector('.overlayModal');
 			this.btn.addEventListener('click', this.enterName.bind(this));
-		});		
+		});
 	}
 	renderModal(){
-		this.modalWindow.innerHTML = 
+		this.modalWindow.innerHTML =
 		`<div class="row row-modal-1">
 			<div class="col-md-3 corner-modal"></div>
-			<div class="col-md-6"><p>enter you name</p></div>
+			<div class="col-md-6"></div>
 			<div class="col-md-3 corner-modal corner-modal--r-t"></div>
 		</div>
 		<div class="row row-modal-1">
-			<div class="col latinFont"><p>(only latin)</p></div>
+			<div class="col"><p>enter you name</p><p class="latinFont">(only latin)</p></div>
 		</div>
 		<div class="row row-modal-2 no-gutters">
 			<div class="col-md-8 align-self-center ">
@@ -37,17 +36,8 @@ export class startModal{
 		</div>`;
 		this.modalWindow.classList.add('activeStartModal');
 	}
-	checkName(name){
-		const symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-1234567890{}[],.;:' ";
-		let arrSingName = name.trim().split('');
-		for(let i = 0; i < arrSingName.length; i++) {
-			let a = symbols.match(arrSingName[i]);
-			if (!a) return false;
-		}
-		return arrSingName.length !== 0;
-	}
 	enterName(){
-		if(this.checkName(this.input.value)){;
+		if(this.checkName(this.input.value)){
 			this.overlay.style.visibility = 'hidden';
 			this.modalWindow.classList.remove('activeStartModal');
 			this.enterGame(this.input.value);

@@ -1,5 +1,5 @@
-export class viewWestern {
-	constructor(gamer, bulletsRevolver, bulletsQuantity, audio,randomHole, randomBandit, randomWoodPlank, activeRecordModal, startTimer) {
+export class ViewWestern {
+	constructor(gamer, bulletsRevolver, bulletsQuantity, audio,randomHole, randomBandit, randomWoodPlank, activeRecordModal, renderTimer, startTimer, resultGame, loadResultWindow) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.bank = document.querySelector('.bank p');
@@ -8,7 +8,6 @@ export class viewWestern {
 		this.gamerName = document.querySelector('.gamerName');
 		this.bestShooters = document.querySelector('.bestShooters');
 		this.btnStart = document.querySelector('.btnStart');
-		this.timer = document.querySelector('.timer');
 
 		this.gamePlate.addEventListener('click', ev=>this.shot(ev));
 		this.btnStart.addEventListener('click', this.startGame.bind(this));
@@ -22,11 +21,15 @@ export class viewWestern {
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
 		this.activeRecordModal = activeRecordModal;
+		this.renderTimer = renderTimer;
 		this.startTimer = startTimer;
+		this.resultGame = resultGame;
+		this.loadResultWindow = loadResultWindow;
 		this.isReloadGun = false;
-		this.isStart = false;
-
-		this.enterGame()
+		this.isStartObj = {isStart: false};
+		this.idBanditTurnIntervals = [];
+		
+		this.enterGame();
 	}
 	// рендер игрового поля
 	renderGamePlate(){
@@ -69,17 +72,13 @@ export class viewWestern {
 		let str = '';
 		for (let i = 0; i < 7; i++) {
 			if(arr[i]) {
-				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arr[i].name}</span><span> ${arr[i].bank}$ </span><span> ${arr[i].inTarget}</span></div>`;
+				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arr[i].name}</span><span> ${arr[i].bank}$ </span><span> ${arr[i].inTarget}☨</span></div>`;
 			}
 			else {str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>vacancy</span></div>`;}
 		}
 		str+=`<div class="recordResult btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
 		this.bestShooters.innerHTML = '<div class="recordResultTitle">The Magnificent seven</div>' + str;
 		document.querySelector('.btnRecordTable').addEventListener('click', this.activeRecordModal);
-	}
-	//рендер таймера
-	renderTimer(){
-		this.timer.innerHTML = '<p>Timer: </p><p>&#09;</p>';
 	}
 	//вход в игру
 	enterGame(){
@@ -89,9 +88,14 @@ export class viewWestern {
 		this.renderBank(this.gamer.bank);
 		this.renderBullets();
 		this.renderTimer();
-		//this.renderBestShooters(this.records);
 	}
-
+	//повторный запуск игры
+	againGame(){
+		this.bulletsRevolver = 6;
+		this.bullets.style.visibility = 'hidden';	
+		this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
+		this.enterGame();
+	}
 	// ====== РЕНДЕР БАНДИТОВ И ВЫСТРЕЛОВ ======
 
 	//добавление бандитов
@@ -126,9 +130,9 @@ export class viewWestern {
 	}
 	//запуск бандитов
 	goBandits(){
-		this.wantedList.forEach(el=>{
+		this.wantedList.forEach(el => {
 			let time = Math.floor(Math.random()*4000+2000);// интервал частоты поворота картинки
-			setInterval(()=>{
+			this.idBanditTurnIntervals.push(setInterval(()=>{
 				this.addBandit(el)
 				.then(()=>{
 					this.renderBandit(el);
@@ -140,12 +144,12 @@ export class viewWestern {
 						});
 					}, 1500); //задержка на экране
 				});
-			},time);
+			},time));
 		});
 	}
 	// выстрел
 	shot(ev){
-		if(this.isStart){
+		if(this.isStartObj.isStart){
 			if(!this.isReloadGun){
 				this.bulletsRevolver--;
 				this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
@@ -199,30 +203,27 @@ export class viewWestern {
 
 	// ====== СТАРТ ИГРЫ ======
 
-	// рендер тайминга
-	renderTiming(str){
-		document.querySelector('.timer :nth-child(2)').innerText = `${str}`;
-	}
-
 	//старт игры
 	startGame(){
-		this.isStart = true;
+		this.isStartObj.isStart = true;
 		this.btnStart.classList.add('btnStart-hidden');
 		this.bullets.style.visibility = 'visible';
-		this.startTimer();
+		setTimeout(this.startTimer, 2000);
 		this.goBandits();
 	}
 
+	// ====== КОНЕЦ ИГРЫ ======
 
-
-
-	//
-	checkRecords(){
-
+	//удаление таймеров
+	timersOff(){
+		this.isStartObj.isStart = false; // удаляем таймер тайминга
+		this.idBanditTurnIntervals.forEach(el => clearInterval(el)); // удаляем таймеры повротов 
 	}
-	//
+	// конец игры
 	endGame(){
-		this.checkRecords();
-		this.renderBullets();
+		this.timersOff();
+		this.resultGame();
+		this.loadResultWindow();
+
 	}
 }

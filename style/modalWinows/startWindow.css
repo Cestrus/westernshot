@@ -4,7 +4,7 @@
 	height: 250px;
 	border: 2px solid black;
 	margin: 0 auto;
-	background-image: url("../img/background/wild-west.jpg");
+	background-image: url("../../img/background/wild-west.jpg");
 	background-size: 100% 100%;
 	font-size: 25px;
 	text-align: center;
@@ -13,15 +13,16 @@
 	z-index: 30;
 	top: calc(50vh - 125px);
 	left: calc(50vw - 225px);
+	color: black;
 }
 .startModal p{
-	margin-top: 40px;
+	margin: 0;
 }
 .row-modal-1{height: 20%;}
 .row-modal-2{height: 40%;}
 .corner-modal{
 	background-size: contain;
-	background-image: url("../img/patterns/vintage_corner2.svg");
+	background-image: url("../../img/patterns/vintage_corner2.svg");
 	background-repeat: no-repeat;
 }
 .latinFont{
@@ -52,7 +53,7 @@
 	background-color: rgba(142, 72, 28, 0.6);
 	background-size: contain;
 	background-position: center;
-	background-image: url("../img/other/btn-gun.svg");
+	background-image: url("../../img/other/btn-gun.svg");
 	background-repeat: no-repeat;
 }
 /*убираем обводку*/

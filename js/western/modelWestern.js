@@ -1,8 +1,8 @@
-export class modelWestern{
+export class ModelWestern{
 	constructor(gamerName, dataFromFirebase) {
 		this.money = 0;
 		this.bulletsRevolver = 6;
-		this.bulletsQuantity = 60;
+		this.bulletsQuantity = 6;
 		this.arrHoleShot = [
 			'url("./img/holes/bullet-hole-1.png")',
 			'url("./img/holes/bullet-hole-2.png")',
@@ -33,7 +33,6 @@ export class modelWestern{
 		};
 		this.db = dataFromFirebase;
 		this.records = [];
-		//this.loadData(sendData);
 	}
 	randomHole(){
 		return this.arrHoleShot[Math.floor(Math.random() * this.arrHoleShot.length)];
@@ -48,6 +47,7 @@ export class modelWestern{
 	randomWoodPlank(){
 		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
+	// зарузка данных из Firebase
 	loadData(){
 		return (this.db.collection("shooters")
 			.get()
@@ -61,8 +61,33 @@ export class modelWestern{
 			})
 		)
 	}
+	// сохранение результата игры в Firebase
+	saveData(){
+
+	}
+	//подсчёт результата игры 
+	resultGame(){
+		this.gamer.percent = +Math.floor(this.gamer.inTarget * 100 / this.bulletsQuantity).toFixed(1);
+		//this.gamer.rating = 
+		this.gamer.date = this.getDateNow();
+		this.saveData();
+	}
+	getDateNow(){
+		const d = new Date();
+		return `${d.getDate}.${d.getMonth}.${d.getFullYear} ${d.getHours}:${d.getMinutes}`;
+	}
+	//проверка рекорда
 	checkRecord(name, money){
 
+	}
+	//
+	reloadGamer(){
+		this.gamer.bank = this.money;
+		this.gamer.gameTime = 0;
+		this.gamer.inTarget = 0;
+		this.gamer.percent = 0;
+		this.gamer.rating = 0;
+		this.gamer.date = '';
 	}
 
 }

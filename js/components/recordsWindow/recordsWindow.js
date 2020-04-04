@@ -1,6 +1,6 @@
-export class recordModal{
+export class RecordsWindow{
 	constructor(records) {
-		this.recordModal = document.querySelector('.recordModal');
+		this.recordsWindow = document.querySelector('.recordsWindow');
 		this.recordTable = document.querySelector('.recordTable');
 		this.btnLeft = document.querySelector('.btnModal__modalRecord-left');
 		this.btnRight = document.querySelector('.btnModal__modalRecord-right');
@@ -12,17 +12,17 @@ export class recordModal{
 
 	}
 	renderWindow(){
-		this.recordModal.innerHTML = `
+		this.recordsWindow.innerHTML = `
 			
 		`
 	}
 	renderTable(){
 
 	}
-	activeModal(){
-		this.recordModal.classList.add('activeRecordModal');
-		this.overlay.style.visibility = 'visible';
+	activeWindow(){
 		this.renderTable();
+		this.overlay.style.visibility = 'visible';
+		this.recordsWindow.classList.toggle('activeRecordModal');
 	}
 	left(){
 
@@ -31,7 +31,7 @@ export class recordModal{
 
 	}
 	close(){
-		this.overlay.style.visibility = 'hidden';
-		this.recordModal.classList.remove('activeRecordModal');
+		this.recordsWindow.classList.toggle('activeRecordModal');
+		setTimeout(()=>this.overlay.style.visibility = 'hidden', 500);
 	}
 }

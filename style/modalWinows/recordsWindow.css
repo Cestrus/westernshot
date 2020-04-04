@@ -1,19 +1,22 @@
-.recordModal{
+.recordsWindow{
 	position: absolute;
 	width: 600px;
 	height: 480px;
+	top: calc(50vh - 240px);
+	left: -600px;
 	border: 2px solid black;
 	margin: 0 auto;
-	background-image: url("../img/background/wild-west.jpg");
+	background-image: url("../../img/background/wild-west.jpg");
 	background-size: 100% 100%;
+	z-index: 30;
+	color: black;
 	opacity: 0;
 	visibility: hidden;
-	z-index: 30;
-	top: calc(50vh - 240px);
-	left: calc(50vw - 300px);
+	transition: 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	transform:translateX(0);
 }
 .recordTitle{
-	margin-top: 30px;
+	margin: 30px auto 0;
 	text-align: center;
 	font-size: 20px;
  }
@@ -21,7 +24,7 @@
 .row-recordModal-2{height: 60%;}
 .corner-modal{
 	background-size: contain;
-	background-image: url("../img/patterns/vintage_corner2.svg");
+	background-image: url("../../img/patterns/vintage_corner2.svg");
 	background-repeat: no-repeat;
 }
 .corner-modal--r-t {
@@ -34,6 +37,8 @@
 .activeRecordModal{
 	opacity: 1;
 	visibility: visible;
+	transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transform:translateX(calc(50vw + 300px));
 }
 .btnModal__modalRecord{
 	height: 30px;
@@ -45,5 +50,5 @@
 
 }
 .btnModal__modalRecord-close{
-	background-image: url("../img/other/cross-guns.svg");
+	background-image: url("../../img/other/cross-guns.svg");
 }

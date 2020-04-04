@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/components/resultWindow/resultWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/components/startWindow/controllerStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/components/startWindow/modelStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/components/timer/controllerTimer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/components/timer/modelTimer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/components/timer/viewTimer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/modalWinows/resultWindow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/firebase/init-firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/firebase/init-firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modalWindows/recordModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/recordsWindow/recordsWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modalWindows/startModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/startWindow/viewStart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/otherModules/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/audioPlayer/audioPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/otherModules/timer.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.юд.юдббьлг78ртшотеинрмапувсакыцйФфцЫАКСЧЕУЫКЦВФУЙ2Ы1ФЙ2ёцу4ку53е64н7г86нш97щг80=хÐ-ъх=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/recordModal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/startModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/modalWinows/startWindow.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -42,15 +54,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.HTML" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myProject\Western\style" />
-      <recent name="D:\myProject\Western\style\modalWindows" />
-      <recent name="D:\myProject\Western\js\otherModules" />
-      <recent name="D:\myProject\Western\js\western" />
-      <recent name="D:\myProject\Western\js\modalWindows" />
+      <recent name="D:\myProject\Western\js\components\compAudioPlayer" />
+      <recent name="D:\myProject\Western\js\components\compTimer" />
+      <recent name="D:\myProject\Western\js\components" />
+      <recent name="D:\myProject\Western\js\components\compStartWindow" />
+      <recent name="D:\myProject\Western\js\components\compResultWindow" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -102,7 +114,11 @@
       <workItem from="1585566138245" duration="4814000" />
       <workItem from="1585590479181" duration="2008000" />
       <workItem from="1585736040842" duration="23556000" />
-      <workItem from="1585809992207" duration="1941000" />
+      <workItem from="1585809992207" duration="3522000" />
+      <workItem from="1585827200142" duration="18827000" />
+      <workItem from="1585990485127" duration="3462000" />
+      <workItem from="1586000707276" duration="14902000" />
+      <workItem from="1586016008522" duration="1895000" />
     </task>
     <servers />
   </component>
@@ -122,13 +138,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583358419990" />
-    <state x="668" y="162" key="SettingsEditor" timestamp="1585512176992">
+    <state x="668" y="162" key="SettingsEditor" timestamp="1585828217963">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585512176992" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583581901194">
+    <state x="668" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585828217963" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585829674979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583581901194" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585829674979" />
   </component>
 </project>

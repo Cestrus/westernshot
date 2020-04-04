@@ -1,8 +1,8 @@
-import {controllerWestern} from "./western/controllerWestern.js";
-import {startModal} from "./modalWindows/startModal.js";
+import {ControllerWestern} from "./western/controllerWestern.js";
+import {ControllerStart} from "./components/startWindow/controllerStart.js";
 import {dataFromFirebase} from "./firebase/init-firebase.js"
 
-new startModal(gamerName => new controllerWestern(gamerName, dataFromFirebase));
+new ControllerStart(gamerName => new ControllerWestern(gamerName, dataFromFirebase));
 
 
 

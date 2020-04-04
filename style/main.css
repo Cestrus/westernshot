@@ -4,10 +4,10 @@
 @import "wanted.css";
 @import "audioPlayer.css";
 @import "left-side.css";
-@import "startModal.css";
-@import "recordModal.css";
 @import "btnStart.css";
-
+@import "modalWinows/startWindow.css";
+@import "modalWinows/recordsWindow.css";
+@import "modalWinows/resultWindow.css";
 
 @font-face{
 	font-family: 'Western Dead';

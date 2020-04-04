@@ -1,4 +1,4 @@
-export class audioPlayer {
+export class AudioPlayer {
 	constructor(){
 		this.audioPlayer = document.querySelector('.audioPlayer');
 		this.renderAudioPlayer();
@@ -25,7 +25,7 @@ export class audioPlayer {
 											<input type="range" class="inpAudioVolumeMusic" min="0" max="100" value="30" step="5"> 
 										  </div>
 										  <div class="btnAudio btnAudio-pause"></div>
-									  </div>`
+									  </div>`;
 	}
 	startAudioTracks(){
 		this.audioTracks.music.autoplay = true;

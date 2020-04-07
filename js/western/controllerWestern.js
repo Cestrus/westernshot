@@ -24,8 +24,8 @@ export class ControllerWestern{
 									this.loadResultWindow.bind(this));
 
 		this.recordsWindow = new RecordsWindow(this.model.records);
-		this.resultWindow = new ResultWindow(this.model.gamer, this.reloadGamer.bind(this));
-		this.sendData();
+		this.resultWindow = new ResultWindow(this.model.gamer, this.nextGame.bind(this));
+		this.loadData();
 	}
 	randomHole(){
 		return this.model.randomHole();
@@ -51,18 +51,20 @@ export class ControllerWestern{
 	loadResultWindow(){
 		return this.resultWindow.loadResultWindow();
 	}
-	sendData(){
-		this.model.loadData()
+	loadData(){
+		this.model.loadFromDatabase()
 			.then(arr => this.view.renderBestShooters(arr));
 	}
-	reloadGamer(){
+	//
+	nextGame(){
 		this.model.reloadGamer();
-		this.view.againGame();		
+		this.view.renderBestShooters(this.model.records);
+		this.view.nextGame();
 	}
 
 }
 
-//+ TODO авторизация игрока (создание объекта и запись в него данных, при повторном старте игры обнуление ряда свойств объекта)
+//++ TODO авторизация игрока (создание объекта и запись в него данных, при повторном старте игры обнуление ряда свойств объекта)
 //++ TODO тайминг при старте
 //++ TODO загрузка рекордов в боковую панель при входе в игру
 //++ TODO кнопкa рекордов

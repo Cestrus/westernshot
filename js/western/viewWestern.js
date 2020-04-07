@@ -1,5 +1,5 @@
 export class ViewWestern {
-	constructor(gamer, bulletsRevolver, bulletsQuantity, audio,randomHole, randomBandit, randomWoodPlank, activeRecordModal, renderTimer, startTimer, resultGame, loadResultWindow) {
+	constructor(gamer, bulletsRevolver, bulletsQuantity, audio, randomHole, randomBandit, randomWoodPlank, activeRecordModal, renderTimer, startTimer, resultGame, loadResultWindow) {
 		this.gamePlate = document.querySelector('.game-plate');
 		this.wantedList = function (){this.renderGamePlate(); return document.querySelectorAll('.wanted')}.bind(this)();
 		this.bank = document.querySelector('.bank p');
@@ -48,14 +48,16 @@ export class ViewWestern {
 
 	// рендер банка
 	renderBank(money){
+		let bank = this.gamer.bank;
+		this.gamer.bank += money;
 		let interval = setInterval(()=>{
-			this.bank.innerText = `BANK: ${this.gamer.bank}$`;
+			this.bank.innerText = `BANK: ${bank}$`;
 			if(!money) clearInterval(interval);
 			else{
 				money--;
-				this.gamer.bank++;
+				bank++;
 			}
-		}, 20)
+		}, 20);
 	}
 	// рендер патронов
 	renderBullets(){
@@ -72,12 +74,12 @@ export class ViewWestern {
 		let str = '';
 		for (let i = 0; i < 7; i++) {
 			if(arr[i]) {
-				str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>${arr[i].name}</span><span> ${arr[i].bank}$ </span><span> ${arr[i].inTarget}☨</span></div>`;
+				str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>${arr[i].name}</p><p> ${arr[i].bank}$ </p><p> ${arr[i].inTarget}☨</p></div>`;
 			}
-			else {str += `<div class="recordResult" style="background-image: url${this.randomWoodPlank()};"><span> ${i + 1}.</span><span>vacancy</span></div>`;}
+			else {str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>vacancy</p></div>`;}
 		}
-		str+=`<div class="recordResult btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
-		this.bestShooters.innerHTML = '<div class="recordResultTitle">The Magnificent seven</div>' + str;
+		str+=`<div class="shooter btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
+		this.bestShooters.innerHTML = '<div class="shootersTitle">The Magnificent seven</div>' + str;
 		document.querySelector('.btnRecordTable').addEventListener('click', this.activeRecordModal);
 	}
 	//вход в игру
@@ -90,7 +92,7 @@ export class ViewWestern {
 		this.renderTimer();
 	}
 	//повторный запуск игры
-	againGame(){
+	nextGame(){
 		this.bulletsRevolver = 6;
 		this.bullets.style.visibility = 'hidden';	
 		this.gun.style.backgroundImage = `url("./img/bullet/gun_${this.bulletsRevolver}.svg")`;
@@ -172,7 +174,7 @@ export class ViewWestern {
 		let hole = document.createElement('div');
 		if(ev.target.tagName === 'IMG'){
 			hole.classList.add('hole', 'hole-kill');
-			this.renderBank(ev.target.nextSibling.outerHTML.match(/\d{2}\d?/)); // определение суммы
+			this.renderBank(+ev.target.nextSibling.outerHTML.match(/\d{2}\d?/)); // определение суммы
 			this.gamer.inTarget++;
 		}
 		else {
@@ -208,7 +210,7 @@ export class ViewWestern {
 		this.isStartObj.isStart = true;
 		this.btnStart.classList.add('btnStart-hidden');
 		this.bullets.style.visibility = 'visible';
-		setTimeout(this.startTimer, 2000);
+		setTimeout(this.startTimer, 1000);
 		this.goBandits();
 	}
 
@@ -224,6 +226,5 @@ export class ViewWestern {
 		this.timersOff();
 		this.resultGame();
 		this.loadResultWindow();
-
 	}
 }

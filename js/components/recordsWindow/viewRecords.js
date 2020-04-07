@@ -1,4 +1,4 @@
-export class RecordsWindow{
+export class ViewRecords{
     constructor(records) {
         this.recordsWindow = document.querySelector('.recordsWindow');
         this.renderWindow();
@@ -7,9 +7,10 @@ export class RecordsWindow{
 		this.overlay = document.querySelector('.overlayModal');       
         this.recordTable = document.querySelector('.recordTable');
         this.renderTableHead();
-		this.records = records;				
-        this.page = 1;
-        this.recordsBody = document.querySelector('.recordTableBody tbody');		
+        this.records = records;
+        this.page = 0;
+        this.recordsBody = document.querySelector('.recordTableBody tbody');
+        this.renderRecords(this.page);
 
 		document.querySelector('.btnModal__modalRecord-close').addEventListener('click', this.close.bind(this));
 		this.btnLeft.addEventListener('click', this.left.bind(this));
@@ -43,11 +44,11 @@ export class RecordsWindow{
             </div>`
 	}
 	renderTableHead(){
-        this.recordTable.innerHTML = `
+        this.renderTable.innerHTML = `
             <div class="recordTableHead">
                 <table class="">
                     <tbody>
-                        <tr class="table-row"><td></td><td>name</td><td>bank</td><td>in target</td><td>rating</td><td>date</td></tr>
+                        <tr class="table-row"><td>N</td><td>name</td><td>bank</td><td>in target</td><td>rating</td><td>date</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -55,31 +56,29 @@ export class RecordsWindow{
                 <table class="">
                     <tbody></tbody>
                 </table>
-            </div>`;
+            </div>`
     }
-    renderTableBody(page = 1){
-		let str = '';
-        for (let i = (page-1) * 7; i < ((page-1) * 7 + 7); i ++){
+    renderRecords(page){
+        str = '';
+        for (let i = page; i < page * 7 + 7; i ++);
             if(!this.records[i]) break;
-			str += `<tr class="table-row"><td>${i+1}</td><td>${this.records[i].name}</td><td>${this.records[i].bank}</td><td>${this.records[i].inTarget}</td><td>${this.records[i].rating}</td><td>${this.records[i].date}</td></tr>`;
-		}
-        this.recordsBody.innerHTML = str;
+            str += `<tr class="table-row"><td>${i+1}</td><td>${this.records[i].name}</td><td>${this.records[i].bank}</td><td>${this.records[i].inTarget}</td><td>${this.records[i].rating}</td><td>${this.records[i].date}</td></tr>`;
+        this.this.recordsBody.innerHTML = str;
     }
 	activeWindow(){
-		this.renderTableBody();
+		this.renderTable();
 		this.overlay.style.visibility = 'visible';
 		this.recordsWindow.classList.toggle('activeRecordModal');
 	}
 	left(){
-        this.page = (--this.page) < 1? 1 : this.page; 
-        this.renderTableBody(this.page);
+        this.renderRecords(--this.page);
 	}
 	right(){
-        this.page = (this.records[this.page*7])? ++this.page : this.page;
-        this.renderTableBody(this.page);
+        this.renderRecords(++this.page);
 	}
 	close(){
 		this.recordsWindow.classList.toggle('activeRecordModal');
 		setTimeout(()=>this.overlay.style.visibility = 'hidden', 700);
 	}
+
 }

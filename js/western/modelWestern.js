@@ -48,7 +48,7 @@ export class ModelWestern{
 		return this.arrWoodPlanks[Math.floor(Math.random() * this.arrWoodPlanks.length)];
 	}
 	// зарузка данных из Firebase
-	loadData(){
+	loadFromDatabase(){
 		return (this.db.collection("shooters")
 			.get()
 			.then(query => {
@@ -61,32 +61,35 @@ export class ModelWestern{
 			})
 		)
 	}
+	//TODO
+	loadData(){
+		return this.loadFromDatabase().then(records => {this.sortRecords(records)});
+	}
 	// сохранение результата игры в Firebase
 	saveData(){
-
+		this.db.collection("shooters").add(this.gamer);
+		this.records.push(Object.assign({}, this.gamer));
 	}
 	//подсчёт результата игры 
 	resultGame(){
-		this.gamer.percent = +Math.floor(this.gamer.inTarget * 100 / this.bulletsQuantity).toFixed(1);
-		//this.gamer.rating = 
+		this.gamer.percent = +(this.gamer.inTarget * 100 / this.bulletsQuantity).toFixed(1);
+		this.gamer.rating = +(this.gamer.bank * this.gamer.inTarget / (this.gamer.gameTime *100)).toFixed(3);
 		this.gamer.date = this.getDateNow();
 		this.saveData();
 	}
 	getDateNow(){
 		const d = new Date();
-		return `${d.getDate}.${d.getMonth}.${d.getFullYear} ${d.getHours}:${d.getMinutes}`;
+		return `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}  ${d.getHours()}:${d.getMinutes()}`;
 	}
-	//проверка рекорда
-	checkRecord(name, money){
+	//TODO сортировка массива рекордов
+	sortRecords_(arr){
 
+		return arr;
 	}
 	//
 	reloadGamer(){
 		this.gamer.bank = this.money;
-		this.gamer.gameTime = 0;
-		this.gamer.inTarget = 0;
-		this.gamer.percent = 0;
-		this.gamer.rating = 0;
+		this.gamer.gameTime = this.gamer.inTarget = this.gamer.percent = this.gamer.rating = 0;
 		this.gamer.date = '';
 	}
 

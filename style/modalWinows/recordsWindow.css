@@ -1,8 +1,8 @@
 .recordsWindow{
 	position: absolute;
 	width: 600px;
-	height: 480px;
-	top: calc(50vh - 240px);
+	height: 400px;
+	top: calc(50vh - 200px);
 	left: -600px;
 	border: 2px solid black;
 	margin: 0 auto;
@@ -50,5 +50,19 @@
 
 }
 .btnModal__modalRecord-close{
+	margin-top: 0;
 	background-image: url("../../img/other/cross-guns.svg");
+}
+.recordTable{
+	font-size: 16px;
+}
+table{width: 100%;}
+.table-row td {width: 16%;}
+.table-row td:first-child{width: 6%;}
+.table-row td:last-child{width: 30%;}
+.recordTableHead, .recordTableBody{
+	text-align: center;
+}
+.recordTableHead{
+margin-bottom: 15px;
 }

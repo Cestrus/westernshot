@@ -1,5 +1,5 @@
 export class ResultWindow{
-	constructor(gamer, reloadGamer) {
+	constructor(gamer, nextGame) {
 		this.resultModal = document.querySelector('.resultModal');
 		this.renderWindow();
 		this.resultTable = document.querySelector('.resultTable');
@@ -8,9 +8,9 @@ export class ResultWindow{
 		this.overlay = document.querySelector('.overlayModal');
 		
 		this.btnNot.addEventListener('click', this.endGame.bind(this));
-		this.btnYes.addEventListener('click', this.nextGame.bind(this));
+		this.btnYes.addEventListener('click', this.loadNextGame.bind(this));
 		this.gamer = gamer;
-		this.reloadGamer = reloadGamer;
+		this.nextGame = nextGame;
 	}
 	renderWindow(){
 		this.resultModal.innerHTML =  `
@@ -50,8 +50,8 @@ export class ResultWindow{
 		this.resultModal.classList.remove('activeResultModal');
 		this.overlay.style.visibility = 'hidden';
 	}
-	nextGame(){
-		this.reloadGamer();
+	loadNextGame(){
+		this.nextGame();
 		this.resultModal.classList.toggle('activeResultModal');
 		setTimeout(()=>this.overlay.style.visibility = 'hidden', 500);
 	}

@@ -70,7 +70,7 @@ export class ViewWestern {
 		this.gamerName.innerHTML = `<p>${this.gamer.name}</p>`;
 	}
 	// рендер семёрки лучших игроков
-	renderBestShooters(arr) {
+	renderBestShooters(arr) {	
 		let str = '';
 		for (let i = 0; i < 7; i++) {
 			if(arr[i]) {
@@ -79,12 +79,26 @@ export class ViewWestern {
 			else {str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>vacancy</p></div>`;}
 		}
 		str+=`<div class="shooter btnRecordTable" data-toggle="modal" data-target="#staticBackdrop" style="background-image: url${this.randomWoodPlank()};">all result</div>`;
-		this.bestShooters.innerHTML = '<div class="shootersTitle">The Magnificent seven</div>' + str;
+		this.bestShooters.innerHTML = '<div class="shootersTitle"><p>The</p><p> Magnificent </p><p>seven</p></div>' + str;
 		document.querySelector('.btnRecordTable').addEventListener('click', this.activeRecordModal);
 	}
+	// рендер кнопки старта
+	renderBtnStart(){
+		this.btnStart.innerHTML = `
+			<div class="btnStart-t corner-modal"></div>
+			<div class="btnStart-t "></div>
+			<div class="btnStart-t corner-modal corner-modal--r-t"></div>
+			<div class="btnStart-c"></div>
+			<div class="btnStart-b corner-modal corner-modal--l-b"></div>
+			<div class="btnStart-b "></div>
+			<div class="btnStart-b corner-modal corner-modal--r-b"></div>
+			<div class="titleStart">start</div>	
+		`
+	}	
 	//вход в игру
 	enterGame(){
 		this.gun.style.visibility = 'visible';
+		this.renderBtnStart()
 		this.btnStart.classList.remove('btnStart-hidden');
 		this.renderGamerName();
 		this.renderBank(this.gamer.bank);

@@ -3,10 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/audioPlayer/audioPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/audioPlayer/audioPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/recordsWindow/controllerRecords.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/recordsWindow/modelRecords.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/recordsWindow/recordsWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/recordsWindow/recordsWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/recordsWindow/viewRecords.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/components/resultWindow/resultWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/resultWindow/resultWindow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/btnStart.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/btnStart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/left-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/left-side.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/modalWinows/recordsWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/modalWinows/recordsWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/modalWinows/resultWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/modalWinows/resultWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/right-side.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/right-side.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/wanted.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/wanted.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +43,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -105,11 +118,13 @@
       <workItem from="1586000707276" duration="14902000" />
       <workItem from="1586016008522" duration="11292000" />
       <workItem from="1586067023256" duration="1394000" />
+      <workItem from="1586258088161" duration="4152000" />
+      <workItem from="1586505733112" duration="371000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="633" y="283" key="#Menus_and_Toolbars" timestamp="1583358424929">

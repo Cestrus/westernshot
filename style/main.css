@@ -18,6 +18,7 @@ body{
 }
 .myContainer{
 	width: 100vw;
+	min-width: 770px;
 	height: 100vh;
 	background-image: url("../img/background/old-paper-texture.jpg");
 	background-size: 100% 100%;
@@ -32,7 +33,8 @@ body{
 .bandit-row{
 	width: 100%;
 	height: 33%;
-	justify-content: space-around;
+	margin: 0;
+	/* justify-content: space-around; */
 }
 .right-side{
 	width: 100%;

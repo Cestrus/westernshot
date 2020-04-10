@@ -61,14 +61,15 @@ export class ModelWestern{
 			})
 		)
 	}
-	//TODO
+	//
 	loadData(){
-		return this.loadFromDatabase().then(records => {this.sortRecords(records)});
+		return this.loadFromDatabase().then(records => records.sort((a, b) => a.rating > b.rating ? -1 : 1));
 	}
 	// сохранение результата игры в Firebase
 	saveData(){
 		this.db.collection("shooters").add(this.gamer);
 		this.records.push(Object.assign({}, this.gamer));
+		this.records.sort((a, b) => a.rating > b.rating ? -1 : 1);
 	}
 	//подсчёт результата игры 
 	resultGame(){
@@ -81,12 +82,6 @@ export class ModelWestern{
 		const d = new Date();
 		return `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}  ${d.getHours()}:${d.getMinutes()}`;
 	}
-	//TODO сортировка массива рекордов
-	sortRecords_(arr){
-
-		return arr;
-	}
-	//
 	reloadGamer(){
 		this.gamer.bank = this.money;
 		this.gamer.gameTime = this.gamer.inTarget = this.gamer.percent = this.gamer.rating = 0;

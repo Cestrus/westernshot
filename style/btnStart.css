@@ -1,25 +1,49 @@
 .btnStart{
-	display: block;
-	width: 150px;
-	height: 30px;
-	border: 2px solid black;
-	/*border-bottom: 2px solid #512f24;*/
-	/*border-right: 2px solid #512f24;*/
+	position: relative;
+	display: grid;
+	width: 25%;
+	height: 50px;
+	grid-template-areas: 
+		'btnStart-t btnStart-t btnStart-t'
+		'btnStart-c btnStart-c btnStart-c'
+		'btnStart-b btnStart-b btnStart-b';
+	grid-template-rows: 1fr 30% 1fr;
+	grid-template-columns: 1fr 1fr 1fr;	
 	border-radius: 5px;
+	border: 2px solid black;
 	margin: 0 auto;
-	/*background-color: rgba(142, 72, 28, 0.9);*/
-	background-image: url("../img/background/wood-plank_1.png");
+	background-image: url("../img/background/old-paper.jpg");
 	background-size: 100% 100%;
 }
-.btnStart:active, .btnStart:hover, .btnStart:focus {
-	outline: 0;
-	outline-offset: 0;
+.btnStart:hover{
+	cursor: pointer;
 }
-/*.btnStart:active{*/
-/*	border: 2px solid #512f24;*/
-/*	border-bottom: 2px solid rgb(142, 72, 28);*/
-/*	border-right: 2px solid rgb(142, 72, 28);*/
-/*}*/
+.btnStart-t{grid-area: btnStart-t; margin: 2px 2px 0 2px;}
+.btnStart-c{grid-area: btnStart-c;}
+.btnStart-b{grid-area: btnStart-b; margin: 0 2px 2px 2px;}
+
+.corner-modal{
+	background-size: contain;
+	background-image: url("../img/patterns/vintage_corner2.svg");
+	background-repeat: no-repeat;
+}
+.corner-modal--r-t {
+	transform: rotate(180deg);
+	transform: scaleX(-1);
+}
+.corner-modal--l-b{transform: scaleY(-1);}
+.corner-modal--r-b{transform: rotate(180deg);}
+.titleStart{
+	position: absolute;
+	width: 90px;
+	margin: 0 auto;
+	font-size: 25px;
+	top: calc(50% - 17px);
+	left: calc(50% - 45px);
+	color:black;
+	text-align: center;
+}
+
 .btnStart-hidden{
 	visibility: hidden;
 }

@@ -23,8 +23,8 @@ export class ControllerWestern{
 									this.resultGame.bind(this),
 									this.loadResultWindow.bind(this));
 
-		this.recordsWindow = new RecordsWindow(this.model.records);
-		this.resultWindow = new ResultWindow(this.model.gamer, this.nextGame.bind(this));
+		this.recordsWindow = new RecordsWindow(this.model.records, this.audio.audioTracks);
+		this.resultWindow = new ResultWindow(this.model.gamer, this.nextGame.bind(this), this.audio.audioTracks);
 		this.loadData();
 	}
 	randomHole(){
@@ -52,7 +52,7 @@ export class ControllerWestern{
 		return this.resultWindow.loadResultWindow();
 	}
 	loadData(){
-		this.model.loadFromDatabase()
+		this.model.loadData()
 			.then(arr => this.view.renderBestShooters(arr));
 	}
 	//
@@ -70,7 +70,7 @@ export class ControllerWestern{
 //++ TODO кнопкa рекордов
 //++ TODO кнопка старта игры
 //++ TODO создание модального окна результа игры 
-//TODO создание модального окна рекордов
+//+ TODO создание модального окна рекордов
 //+ TODO окончание игры (с проверкой и записью рекорда, остановкой таймера)
 //TODO переписать промисы использовав async 
 //TODO ? измененние курсора мыши

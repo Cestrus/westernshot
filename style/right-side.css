@@ -36,8 +36,8 @@
 	height: 40%;
 	width: 100%;
 	background-repeat: no-repeat;
-	background-position: top;
-	background-size: 60%;
+	background-position: left top;
+	background-size: 65%;
 	background-image: url("../img/bullet/gun_6.svg");
 	visibility: hidden;
 }

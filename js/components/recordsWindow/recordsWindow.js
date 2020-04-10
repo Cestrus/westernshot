@@ -1,5 +1,5 @@
 export class RecordsWindow{
-    constructor(records) {
+    constructor(records, audioTracks) {
         this.recordsWindow = document.querySelector('.recordsWindow');
         this.renderWindow();
 		this.btnLeft = document.querySelector('.btnModal__modalRecord-left');
@@ -7,7 +7,8 @@ export class RecordsWindow{
 		this.overlay = document.querySelector('.overlayModal');       
         this.recordTable = document.querySelector('.recordTable');
         this.renderTableHead();
-		this.records = records;				
+		this.records = records;
+		this.audioTracks = audioTracks;
         this.page = 1;
         this.recordsBody = document.querySelector('.recordTableBody tbody');		
 
@@ -47,7 +48,7 @@ export class RecordsWindow{
             <div class="recordTableHead">
                 <table class="">
                     <tbody>
-                        <tr class="table-row"><td></td><td>name</td><td>bank</td><td>in target</td><td>rating</td><td>date</td></tr>
+                        <tr class="table-row"><td></td><td>name</td><td>bank</td><td>target</td><td>rating</td><td>date</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -69,6 +70,7 @@ export class RecordsWindow{
 		this.renderTableBody();
 		this.overlay.style.visibility = 'visible';
 		this.recordsWindow.classList.toggle('activeRecordModal');
+		this.audioTracks.wind.play();
 	}
 	left(){
         this.page = (--this.page) < 1? 1 : this.page; 
@@ -80,6 +82,7 @@ export class RecordsWindow{
 	}
 	close(){
 		this.recordsWindow.classList.toggle('activeRecordModal');
+		setTimeout(()=>this.audioTracks.wind.play(), 200);
 		setTimeout(()=>this.overlay.style.visibility = 'hidden', 700);
 	}
 }

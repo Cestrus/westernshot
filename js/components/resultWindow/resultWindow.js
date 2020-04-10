@@ -1,5 +1,5 @@
 export class ResultWindow{
-	constructor(gamer, nextGame) {
+	constructor(gamer, nextGame, audioTracks) {
 		this.resultModal = document.querySelector('.resultModal');
 		this.renderWindow();
 		this.resultTable = document.querySelector('.resultTable');
@@ -9,6 +9,7 @@ export class ResultWindow{
 		
 		this.btnNot.addEventListener('click', this.endGame.bind(this));
 		this.btnYes.addEventListener('click', this.loadNextGame.bind(this));
+		this.audioTracks = audioTracks;
 		this.gamer = gamer;
 		this.nextGame = nextGame;
 	}
@@ -40,10 +41,11 @@ export class ResultWindow{
 	renderResultTable(){
 		this.resultTable.innerHTML = `<tbody><tr><td>bank:</td><td>${this.gamer.bank}$</td></tr><tr><td>time:</td><td>${Math.floor(this.gamer.gameTime/60)}<span>m</span> ${this.gamer.gameTime%60}<span>s</span></td></tr><tr><td>in target:</td><td>${this.gamer.inTarget}</td></tr><tr><td>percent:</td><td>${this.gamer.percent}%</td></tr><tr><td>rating:</td><td>${this.gamer.rating}</td></tr></tbody>`;
 	}
-	loadResultWindow(){	
+	loadResultWindow(){
 		this.renderResultTable();
 		this.overlay.style.visibility = 'visible';
 		this.resultModal.classList.toggle('activeResultModal');
+		this.audioTracks.wind.play();
 	}
 	endGame(){
 		window.location.reload();
@@ -53,6 +55,7 @@ export class ResultWindow{
 	loadNextGame(){
 		this.nextGame();
 		this.resultModal.classList.toggle('activeResultModal');
+		this.audioTracks.wind.play();
 		setTimeout(()=>this.overlay.style.visibility = 'hidden', 500);
 	}
 	

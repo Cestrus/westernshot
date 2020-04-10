@@ -1,7 +1,8 @@
 .title{
-	/* font-size: 4em; */
+	/* font-size: ; */
 	text-align: center;
 	color: black;
+	margin-top: 20px;
 }
 .top-gun {
 	background-image: url("../img/other/btn-gun.svg");

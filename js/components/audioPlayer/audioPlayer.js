@@ -9,6 +9,7 @@ export class AudioPlayer {
 			music: new Audio('./media/Neil Young.mp3'),
 			shot: new Audio('./media/sounds/shot.wav'),
 			reload: new Audio('./media/sounds/reload_bullet.wav'),
+			wind: new Audio('./media/sounds/wind.mp3')
 		}; 
 		this.btnAudio.addEventListener('click', this.clickAudio.bind(this));
 		this.volumeMusic.addEventListener('change', this.changeVolumeMusic.bind(this));

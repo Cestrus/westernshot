@@ -3,7 +3,6 @@
 	height: 15%;
 	width: 100%;
 	color: black;
-	/*align-items: center;*/
 }
 .timer p {
 	font-size: 1.5em;
@@ -12,7 +11,7 @@
 .bank{
 	height: 15%;
 	width: 100%;
-	font-size: 2em;
+	font-size: calc((100vw - 1024px)/(1920 - 1024) * (40 - 25) + 25px);
 	color: black;
 	text-align: center;
 }

@@ -16,7 +16,6 @@ export class ViewWestern {
 		this.bulletsRevolver = bulletsRevolver;
 		this.bulletsQuantity = bulletsQuantity;
 		this.audio = audio;
-		//this.records = records;
 		this.randomHole = randomHole;
 		this.randomBandit = randomBandit;
 		this.randomWoodPlank = randomWoodPlank;
@@ -74,7 +73,7 @@ export class ViewWestern {
 		let str = '';
 		for (let i = 0; i < 7; i++) {
 			if(arr[i]) {
-				str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>${arr[i].name}</p><p> ${arr[i].bank}$ </p><p> ${arr[i].inTarget}☨</p></div>`;
+				str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>${arr[i].name}</p><p> ${arr[i].bank}$ </p><p> ${arr[i].inTarget}✚</p></div>`;
 			}
 			else {str += `<div class="shooter d-flex" style="background-image: url${this.randomWoodPlank()};"><p> ${i + 1}.</p><p>vacancy</p></div>`;}
 		}

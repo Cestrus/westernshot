@@ -1,6 +1,6 @@
 export class ModelWestern{
 	constructor(gamerName, dataFromFirebase) {
-		this.money = 0;
+		this.money = 1100;
 		this.bulletsRevolver = 6;
 		this.bulletsQuantity = 6;
 		this.arrHoleShot = [

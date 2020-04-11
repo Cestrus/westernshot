@@ -20,7 +20,7 @@
 }
 .row-modal-1{height: 20%;}
 .row-modal-2{height: 40%;}
-.corner-modal{
+.corner-modal_start{
 	background-size: contain;
 	background-image: url("../../img/patterns/vintage_corner2.svg");
 	background-repeat: no-repeat;
@@ -29,12 +29,12 @@
 	font-size: 18px;
 	margin-top: -10px;
 }
-.corner-modal--r-t {
+.corner-modal_start--r-t {
 	transform: rotate(180deg);
 	transform: scaleX(-1);
 }
-.corner-modal--l-b{transform: scaleY(-1);}
-.corner-modal--r-b{transform: rotate(180deg);}
+.corner-modal_start--l-b{transform: scaleY(-1);}
+.corner-modal_start--r-b{transform: rotate(180deg);}
 .inputModal{
 	display: inline-block;
 	height: 40px;

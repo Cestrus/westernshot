@@ -20,9 +20,9 @@ export class RecordsWindow{
     renderWindow(){
 		this.recordsWindow.innerHTML = `
             <div class="row row-recordModal-1">
-                <div class="col-md-3 corner-modal"></div>
+                <div class="col-md-3 corner-modal_start"></div>
                 <div class="col-md-6"><p class="recordTitle">Record table</p></div>
-                <div class="col-md-3 corner-modal corner-modal--r-t"></div>
+                <div class="col-md-3 corner-modal_start corner-modal_start--r-t"></div>
             </div>
             <div class="row row-recordModal-2 align-items-start">
                 <div class="col-md-1"></div>
@@ -30,7 +30,7 @@ export class RecordsWindow{
                 <div class="col-md-1"></div>
             </div>
             <div class="row row-recordModal-1">
-                <div class="col-md-3 corner-modal corner-modal--l-b"></div>
+                <div class="col-md-3 corner-modal_start corner-modal_start--l-b"></div>
                 <div class="col-md-6">
                     <div class="row justify-content-md-center">
                         <button class="btnModal btnModal__modalRecord btnModal__modalRecord-left"></button>
@@ -40,7 +40,7 @@ export class RecordsWindow{
                         <button class="btnModal btnModal__modalRecord btnModal__modalRecord-close"></button>
                     </div>
                 </div>
-                <div class="col-md-3 corner-modal corner-modal--r-b"></div>
+                <div class="col-md-3 corner-modal_start corner-modal_start--r-b"></div>
             </div>`
 	}
 	renderTableHead(){

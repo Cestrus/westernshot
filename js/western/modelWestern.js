@@ -1,8 +1,8 @@
 export class ModelWestern{
 	constructor(gamerName, dataFromFirebase) {
-		this.money = 1100;
+		this.money = 0;
 		this.bulletsRevolver = 6;
-		this.bulletsQuantity = 6;
+		this.bulletsQuantity = 12;
 		this.arrHoleShot = [
 			'url("./img/holes/bullet-hole-1.png")',
 			'url("./img/holes/bullet-hole-2.png")',

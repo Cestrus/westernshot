@@ -113,19 +113,19 @@ export class ViewWestern {
 	}
 	// ====== РЕНДЕР БАНДИТОВ И ВЫСТРЕЛОВ ======
 
-	//добавление бандитов
+	//добавление бандитов TODO
 	addBandit(el){
-		return new Promise(function (resolve) {
-			el.classList.add('wanted-move');
-			setTimeout(()=>resolve(), 250); // половина от css transition
-		});
+		// return new Promise(function (resolve) {
+		// 	el.classList.add('wanted-move');
+		// 	setTimeout(()=>resolve(), 250); // половина от css transition
+		// });
 	}
-	//удаление бандитов
+	//удаление бандитов TODO
 	removeBandit(el){
-		return new Promise(function (resolve) {
-			el.classList.remove('wanted-move');
-			setTimeout(()=>resolve(), 250);
-		});
+		// return new Promise(function (resolve) {
+		// 	el.classList.remove('wanted-move');
+		// 	setTimeout(()=>resolve(), 250);
+		// });
 	}
 	//рендер бандитов
 	renderBandit(el){
@@ -143,22 +143,32 @@ export class ViewWestern {
 			}
 		}
 	}
-	//запуск бандитов
+	//запуск бандитов TODO
 	goBandits(){
+		// this.wantedList.forEach(el => {
+		// 	let time = Math.floor(Math.random()*4000+2000);// интервал частоты поворота картинки
+		// 	this.idBanditTurnIntervals.push(setInterval(()=>{
+		// 		this.addBandit(el)
+		// 		.then(()=>{
+		// 			this.renderBandit(el);
+		// 			let interval = setTimeout(()=>{
+		// 				this.removeBandit(el)
+		// 				.then(()=>{
+		// 					el.innerHTML = '';
+		// 					clearInterval(interval);
+		// 				});
+		// 			}, 1500); //задержка на экране
+		// 		});
+		// 	},time));
+		// });
 		this.wantedList.forEach(el => {
 			let time = Math.floor(Math.random()*4000+2000);// интервал частоты поворота картинки
 			this.idBanditTurnIntervals.push(setInterval(()=>{
-				this.addBandit(el)
-				.then(()=>{
-					this.renderBandit(el);
-					let interval = setTimeout(()=>{
-						this.removeBandit(el)
-						.then(()=>{
-							el.innerHTML = '';
-							clearInterval(interval);
-						});
-					}, 1500); //задержка на экране
-				});
+				el.classList.add('wanted-move');
+				setTimeout(()=>{this.renderBandit(el)}, 250); // половина от css transition
+				setTimeout(()=>{
+					el.classList.remove('wanted-move');
+				}, 1000); //задержка на экране				
 			},time));
 		});
 	}

@@ -1,6 +1,6 @@
 .title{
-	/* font-size: calc((100vw - 1024px)/(1920 - 1024) * (50 - 40) + 40px); */
-	font-size: 45px;
+	 font-size: calc((100vw - 1024px)/(1920 - 1024) * (50 - 40) + 40px);
+	/*font-size: 45px;*/
 	text-align: center;
 	color: black;
 	margin-top: 20px;

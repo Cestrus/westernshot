@@ -6,6 +6,6 @@ export class ModelStart {
 			let a = symbols.match(arrSingName[i]);
 			if (!a) return false;
 		}
-		return arrSingName.length !== 0;
+		return arrSingName.length > 0 && arrSingName.length <= 10;
 	}
 }

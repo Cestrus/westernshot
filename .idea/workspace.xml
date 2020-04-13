@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="824a5082-40d2-49c4-bce9-90ea3aee06dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/components/recordsWindow/recordsWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/recordsWindow/recordsWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/components/startWindow/modelStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/components/startWindow/modelStart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/western/controllerWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/controllerWestern.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/western/modelWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/modelWestern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/western/viewWestern.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/western/viewWestern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/corner.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/corner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/modalWinows/startWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/modalWinows/startWindow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/title.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/title.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +110,10 @@
       <workItem from="1586509977569" duration="84000" />
       <workItem from="1586515987450" duration="5195000" />
       <workItem from="1586605671863" duration="978000" />
+      <workItem from="1586613694747" duration="4488000" />
+      <workItem from="1586779364562" duration="693000" />
+      <workItem from="1586788822584" duration="605000" />
+      <workItem from="1586795215752" duration="873000" />
     </task>
     <servers />
   </component>
@@ -131,10 +133,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="869" y="340" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583358419990" />
-    <state x="739" y="262" key="FileChooserDialogImpl" timestamp="1586069798680">
+    <state x="739" y="262" key="FileChooserDialogImpl" timestamp="1586782315822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586069798680" />
+    <state x="739" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586782315822" />
     <state x="668" y="162" key="SettingsEditor" timestamp="1585828217963">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
